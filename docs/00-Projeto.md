@@ -1,5 +1,29 @@
 # Projeto - English AI Tutor
 
+> "Este projeto não documenta apenas a construção de um agente de IA.
+> Documenta também a construção da profissional que o desenvolveu."
+
+---
+
+## Nome Interno
+
+A definir.
+
+---
+
+# Manifesto
+
+Este projeto nasceu da vontade de aprender inglês, evoluir profissionalmente e explorar o potencial da Inteligência Artificial.
+
+Cada linha de documentação representa uma etapa da minha evolução.
+
+Cada erro registrado representa um aprendizado.
+
+Cada funcionalidade criada representa um novo desafio superado.
+
+Mais do que desenvolver um software, este projeto registra a construção das minhas habilidades como profissional de Tecnologia da Informação.
+
+
 ## Sobre o projeto
 
 O English AI Tutor é um projeto pessoal criado com o objetivo de desenvolver um professor de inglês utilizando Inteligência Artificial e automações no n8n.
