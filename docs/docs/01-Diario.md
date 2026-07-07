@@ -7,6 +7,7 @@
 Data:
 
 07/07/2026
+
 Tempo investido:
 
 Ainda em andamento.
