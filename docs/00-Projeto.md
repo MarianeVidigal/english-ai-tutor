@@ -1,7 +1,7 @@
 # Projeto - English AI Tutor
 
 > "Este projeto não documenta apenas a construção de um agente de IA.
-> Documenta também a construção da profissional que o desenvolveu."
+> Ele documenta também a construção da profissional que o desenvolveu."
 
 ---
 
