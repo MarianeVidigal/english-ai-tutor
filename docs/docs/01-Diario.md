@@ -79,15 +79,6 @@ O agente foi adicionado ao fluxo, porém sua configuração será realizada nas 
 
 ---
 
-## O que aconteceu hoje
-
-- Criei o repositório no GitHub.
-- Defini o nome do projeto.
-- Estruturei a documentação inicial.
-- Iniciei a Imersão de n8n da NoCode StartUp.
-
----
-
 ## Objetivo da imersão
 
 Aprender:
