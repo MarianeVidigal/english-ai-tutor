@@ -1,14 +1,18 @@
 # Roadmap
 
-## Versão 0.1
+## Versão 0.0.1 ✅
 
-Professor conversa por texto.
+- Criação do repositório.
+- Estrutura inicial da documentação.
+- Diário de desenvolvimento.
+- Roadmap.
+- Início da Imersão n8n.
 
----
+## Versão 0.0.2 (Em andamento)
 
-## Versão 0.2
-
-Correção gramatical.
+- Aprender os principais nodes do n8n.
+- Construir a base do primeiro agente.
+- Compreender a arquitetura dos Agentes de IA.
 
 ---
 
