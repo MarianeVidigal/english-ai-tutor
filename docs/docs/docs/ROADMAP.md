@@ -16,9 +16,12 @@
 
 ---
 
-## Versão 0.3
+## Versão 0.0.3 ✅
 
-Memória.
+- Primeiro AI Agent criado.
+- Memória integrada.
+- Primeiras Tools adicionadas.
+- Publicação via URL.
 
 ---
 
