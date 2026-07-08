@@ -102,3 +102,24 @@ Aprendi a disponibilizar uma URL pública.
 Descobri como ativar o Workflow na versão mais recente do n8n.
 
 ---
+
+## O que foi desenvolvido
+
+Nesta aula foi concluída a construção do primeiro Agente de IA funcional utilizando o n8n.
+
+O fluxo passou a contar com um Agente de IA integrado ao modelo da Groq, permitindo responder às mensagens enviadas pelo usuário através do Chat.
+
+Também foi configurado um **System Prompt**, responsável por definir o comportamento do agente. Para os testes iniciais, o agente foi instruído a atuar como um assistente de suporte educado, bem-humorado e utilizando emojis para tornar as respostas mais naturais.
+
+Em seguida, foi adicionada uma memória de curto prazo utilizando o recurso **Memory**, configurada inicialmente com um **Context Window Length** de 5 mensagens. Com isso, o agente passou a considerar parte do histórico recente da conversa durante suas respostas.
+
+Para ampliar suas capacidades, foram integradas duas ferramentas (**Tools**):
+
+- Calculadora, permitindo realizar operações matemáticas.
+- Wikipedia, possibilitando consultar informações durante a conversa.
+
+Ao final do fluxo foi adicionado um node **Do Nothing**, utilizado apenas para indicar visualmente o encerramento da automação e manter a organização do workflow.
+
+Por fim, o workflow foi publicado através de uma URL pública, permitindo que outras pessoas acessassem e testassem o agente sem a necessidade de utilizar diretamente o editor do n8n.
+
+Durante os testes, foram realizadas diferentes configurações no System Prompt para observar como as instruções influenciam o comportamento do agente. Entre os experimentos, o agente foi configurado para responder de forma sedutora e, em outro momento, para responder de forma mais ríspida quando recebesse mensagens grosseiras. Esses testes demonstraram, na prática, como o comportamento de um Agente de IA pode ser alterado apenas modificando o prompt, sem necessidade de alterar o fluxo da automação.
