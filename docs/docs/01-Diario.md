@@ -9,6 +9,7 @@ Data: 08/07/2026
 Tempo investido: 2h07min
 
 Tema: 
+
 Aula 2: Construindo e finalizando o agente de IA
 
 ## O que aprendi
