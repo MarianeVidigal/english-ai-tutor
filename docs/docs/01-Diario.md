@@ -1,5 +1,29 @@
 # Diário de Desenvolvimento
 
+## Observações
+
+Este é o primeiro dia do projeto.
+
+---
+
+## Expectativas
+
+Meu objetivo é desenvolver um professor particular de inglês utilizando Inteligência Artificial.
+Também desejo evoluir profissionalmente na área de Tecnologia da Informação e utilizar este projeto como portfólio.
+
+---
+
+## Objetivo da imersão
+
+Aprender:
+
+- Fundamentos do n8n
+- Integração com Google Sheets
+- Agentes de IA
+- APIs
+- Webhooks
+- WhatsApp
+
 ---
 
 # Dia 0
@@ -9,31 +33,6 @@ Data: 08/07/2026
 Tempo investido: 2h07min
 
 Tema: 
-
-Aula 2: Construindo e finalizando o agente de IA
-
-## O que aprendi
-
-## Configuração do Agente
-Configurei meu primeiro AI Agent utilizando Groq.
-Entendi o papel do System Prompt.
-Aprendi que o comportamento do agente pode ser completamente alterado apenas modificando as instruções.
-
-## Memória
-Aprendi a adicionar memória ao agente.
-Configurei o Context Window Length em 5.
-Entendi que a memória permite ao agente lembrar mensagens anteriores.
-
-## Tools
-Adicionei uma calculadora.
-Adicionei a Wikipedia.
-Compreendi que o agente pode utilizar ferramentas externas.
-
-## Deploy
-Aprendi a disponibilizar uma URL pública.
-Descobri como ativar o Workflow na versão mais recente do n8n.
-
----
 
 Aula 1: 
 Introdução às Ferramentas do n8n e Organização da Base de Automação.
@@ -79,26 +78,27 @@ O agente foi adicionado ao fluxo, porém sua configuração será realizada nas 
 
 ---
 
-## Objetivo da imersão
+Aula 2: Construindo e finalizando o agente de IA
 
-Aprender:
+## O que aprendi
 
-- Fundamentos do n8n
-- Integração com Google Sheets
-- Agentes de IA
-- APIs
-- Webhooks
-- WhatsApp
+## Configuração do Agente
+Configurei meu primeiro AI Agent utilizando Groq.
+Entendi o papel do System Prompt.
+Aprendi que o comportamento do agente pode ser completamente alterado apenas modificando as instruções.
+
+## Memória
+Aprendi a adicionar memória ao agente.
+Configurei o Context Window Length em 5.
+Entendi que a memória permite ao agente lembrar mensagens anteriores.
+
+## Tools
+Adicionei uma calculadora.
+Adicionei a Wikipedia.
+Compreendi que o agente pode utilizar ferramentas externas.
+
+## Deploy
+Aprendi a disponibilizar uma URL pública.
+Descobri como ativar o Workflow na versão mais recente do n8n.
 
 ---
-
-## Expectativas
-
-Meu objetivo é desenvolver um professor particular de inglês utilizando Inteligência Artificial.
-Também desejo evoluir profissionalmente na área de Tecnologia da Informação e utilizar este projeto como portfólio.
-
----
-
-## Observações
-
-Este é o primeiro dia do projeto.
