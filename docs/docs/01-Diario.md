@@ -114,7 +114,7 @@ Durante os testes, foram realizadas diferentes configurações no System Prompt 
 
 ---
 
-# Aula 03: Agente Integrado ao WhatsApp com registro automático de leads no Google Sheets utilizando a Z-API.
+## Aula 03: Agente Integrado ao WhatsApp com registro automático de leads no Google Sheets utilizando a Z-API.
 
 ## O que aprendi
 
