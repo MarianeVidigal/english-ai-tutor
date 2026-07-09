@@ -131,9 +131,7 @@ O fluxo passou a receber mensagens enviadas pelo WhatsApp através da Z-API, pro
 
 Também foi implementado o registro automático dos contatos em uma planilha do Google Sheets, garantindo que cada usuário fosse cadastrado apenas uma vez.
 
-Ao final da aula, o fluxo foi publicado utilizando a Production URL do Webhook.
-
-Realizei testes enviando mensagens do meu número corporativo para o número pessoal utilizado na Z-API e o agente respondeu corretamente, validando o funcionamento completo da automação.
+Ao final da aula, o fluxo foi publicado e testado.
 
 ## Encerramento do Dia
 
