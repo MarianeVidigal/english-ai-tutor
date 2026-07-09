@@ -77,40 +77,33 @@ O agente foi adicionado ao fluxo, porém sua configuração será realizada nas 
 
 ## O que aprendi
 
-Configurei meu primeiro AI Agent utilizando Groq.
-
-Entendi o papel do System Prompt.
-
-Aprendi que o comportamento do agente pode ser completamente alterado apenas modificando as instruções.
+- Configurei meu primeiro AI Agent utilizando Groq.
+- Entendi o papel do System Prompt.
+- Aprendi que o comportamento do agente pode ser completamente alterado apenas modificando as instruções.
 
 ### Memória
-Aprendi a adicionar memória ao agente.
-
-Configurei o Context Window Length em 5.
-
-Entendi que a memória permite ao agente lembrar mensagens anteriores.
+- Aprendi a adicionar memória ao agente.
+- Configurei o Context Window Length em 5.
+- Entendi que a memória permite ao agente lembrar mensagens anteriores.
 
 ### Tools
-Adicionei uma calculadora.
-
-Adicionei a Wikipedia.
-
-Compreendi que o agente pode utilizar ferramentas externas.
+- Adicionei uma calculadora.
+- Adicionei a Wikipedia.
+- Compreendi que o agente pode utilizar ferramentas externas.
 
 ### Deploy
-Aprendi a disponibilizar uma URL pública.
-
-Descobri como ativar o Workflow na versão mais recente do n8n.
+- Aprendi a disponibilizar uma URL pública.
+- Descobri como ativar o Workflow na versão mais recente do n8n.
 
 ## O que foi desenvolvido
 
 Nesta aula foi concluída a construção do primeiro Agente de IA funcional utilizando o n8n.
 
-Configurei um agente funcional.
-Adicionei memória.
-Integrei ferramentas.
-Publiquei o agente na Web.
-Realizei testes alterando o comportamento do agente.
+- Configurei um agente funcional.
+- Adicionei memória.
+- Integrei ferramentas.
+- Publiquei o agente na Web.
+- Realizei testes alterando o comportamento do agente.
 
 Para ampliar suas capacidades, foram integradas duas ferramentas (**Tools**):
 
