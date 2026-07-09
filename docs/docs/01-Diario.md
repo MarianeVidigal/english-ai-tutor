@@ -30,12 +30,9 @@ Aprender:
 
 Data: 08/07/2026
 
-Tempo investido: 2h07min
+Tempo investido na Aula 1, 2 e 3: 3h16min
 
-Tema: 
-
-Aula 1: 
-Introdução às Ferramentas do n8n e Organização da Base de Automação.
+## Aula 1: Introdução às Ferramentas do n8n e Organização da Base de Automação.
 
 ## O que aprendi
 
@@ -62,8 +59,6 @@ Compreendi que um agente normalmente é composto por quatro pilares principais:
 - Base de Conhecimento (RAG)
 - Ferramentas (Tools)
 
----
-
 ## O que foi desenvolvido
 
 Durante esta aula foi construída a base inicial da automação.
@@ -78,7 +73,7 @@ O agente foi adicionado ao fluxo, porém sua configuração será realizada nas 
 
 ---
 
-Aula 2: Construindo e finalizando o agente de IA
+## Aula 2: Construindo e finalizando o agente de IA
 
 ## O que aprendi
 
@@ -101,8 +96,6 @@ Compreendi que o agente pode utilizar ferramentas externas.
 Aprendi a disponibilizar uma URL pública.
 Descobri como ativar o Workflow na versão mais recente do n8n.
 
----
-
 ## O que foi desenvolvido
 
 Nesta aula foi concluída a construção do primeiro Agente de IA funcional utilizando o n8n.
@@ -119,3 +112,28 @@ Para ampliar suas capacidades, foram integradas duas ferramentas (**Tools**):
 - Wikipedia, possibilitando consultar informações durante a conversa.
 
 Durante os testes, foram realizadas diferentes configurações no System Prompt para observar como as instruções influenciam o comportamento do agente. Entre os experimentos, o agente foi configurado para responder de forma sedutora e, em outro momento, para responder de forma mais ríspida quando recebesse mensagens grosseiras. Esses testes demonstraram, na prática, como o comportamento de um Agente de IA pode ser alterado apenas modificando o prompt, sem necessidade de alterar o fluxo da automação.
+
+---
+
+# Aula 03: Agente Integrado ao WhatsApp com registro automático de leads no Google Sheets utilizando a Z-API.
+
+## O que aprendi
+
+Compreendi a diferença entre APIs e Webhooks.
+Aprendi a diferença entre os nodes **Filter**, **If** e **Switch**.
+Tive meu primeiro contato com o node **HTTP Request**.
+Também compreendi a diferença entre a **Test URL** e a **Production URL** do Webhook.
+
+## O que foi desenvolvido
+
+Durante esta aula foi desenvolvido um fluxo completo de atendimento automático via WhatsApp.
+
+O fluxo passou a receber mensagens enviadas pelo WhatsApp através da Z-API, processá-las utilizando um Agente de IA e responder automaticamente ao usuário.
+
+Também foi implementado o registro automático dos contatos em uma planilha do Google Sheets, garantindo que cada usuário fosse cadastrado apenas uma vez.
+
+Ao final da aula, o fluxo foi publicado utilizando a Production URL do Webhook.
+
+Realizei testes enviando mensagens do meu número corporativo para o número pessoal utilizado na Z-API e o agente respondeu corretamente, validando o funcionamento completo da automação.
+
+---
