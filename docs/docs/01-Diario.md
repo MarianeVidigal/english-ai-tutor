@@ -135,10 +135,9 @@ Ao final da aula, o fluxo foi publicado e testado.
 
 ## Encerramento do Dia
 
-Hoje finalizei a Imersão de n8n da Code StartUp.
-
 Além de aprender os conceitos fundamentais da ferramenta, consegui desenvolver dois projetos completos utilizando Agentes de IA.
 
-Essa experiência me deu confiança para iniciar a próxima fase do projeto English AI Tutor, que será focada no planejamento da arquitetura e na construção de um professor particular de inglês utilizando Inteligência Artificial.
+- Um agente semelhante ao ChatGPT, acessado por uma interface de chat.
+- Um agente capaz de responder automaticamente mensagens recebidas pelo WhatsApp.
 
 A partir deste ponto, o objetivo deixa de ser apenas aprender o n8n e passa a ser aplicar esse conhecimento na construção de um projeto próprio, documentando toda a evolução desde sua concepção até uma versão funcional.
