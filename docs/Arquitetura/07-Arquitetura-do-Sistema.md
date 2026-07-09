@@ -2,7 +2,17 @@
 
 ## Objetivo
 
-Este documento descreve como todos os componentes do English AI Tutor trabalham juntos.
+Este documento descreve como os principais componentes do English AI Tutor interagem entre si para oferecer uma experiência de aprendizado personalizada.
+
+A arquitetura foi projetada para ser modular, permitindo a evolução do sistema sem a necessidade de reestruturar toda a aplicação.
+
+---
+
+# Visão Geral
+
+O English AI Tutor é composto por diversos módulos independentes, cada um responsável por uma função específica.
+
+Quando um aluno envia uma mensagem, Arthur analisa o contexto, consulta as informações necessárias e responde de acordo com seu método de ensino.
 
 ---
 
@@ -12,35 +22,39 @@ Aluno
 
 ↓
 
-Arthur recebe a mensagem
+Recebimento da mensagem
 
 ↓
 
-Arthur identifica o objetivo do aluno
+Identificação do aluno
 
 ↓
 
-Arthur consulta a memória
+Consulta ao Perfil do Aluno
 
 ↓
 
-Arthur identifica o modo de funcionamento
+Consulta ao Sistema de Memória
 
 ↓
 
-Arthur consulta o plano de aprendizagem
+Identificação do Modo de Funcionamento
 
 ↓
 
-Arthur gera a resposta
+Consulta ao Plano de Aprendizagem (quando necessário)
 
 ↓
 
-Arthur registra a evolução do aluno
+Geração da resposta
 
 ↓
 
-Arthur responde
+Atualização da Memória
+
+↓
+
+Resposta enviada ao aluno
 
 ---
 
@@ -48,11 +62,13 @@ Arthur responde
 
 ## Persona
 
-Define quem é Arthur.
+Responsável por definir quem é Arthur.
 
-Documento:
+Define sua personalidade, comportamento e forma de comunicação.
 
-01-Persona-Arthur.md
+Documento relacionado:
+
+- 01-Persona-Arthur.md
 
 ---
 
@@ -60,52 +76,121 @@ Documento:
 
 Define como Arthur ensina.
 
-Documento:
+Controla a estrutura das aulas, correções e motivação.
 
-02-Metodo-de-Ensino.md
+Documento relacionado:
+
+- 02-Metodo-de-Ensino.md
 
 ---
 
 ## Plano de Aprendizagem
 
-Define os conteúdos disponíveis.
+Define todas as trilhas de ensino disponíveis.
 
-Documento:
+Documento relacionado:
 
-03-Plano-de-Aprendizagem.md
+- 03-Plano-de-Aprendizagem.md
 
 ---
 
 ## Perfil do Aluno
 
-Define quem é o aluno.
+Armazena as características individuais de cada aluno.
 
-Documento:
+Exemplos:
 
-04-Perfil-do-Aluno.md
+- Objetivo
+- Nível
+- Área profissional
+- Preferências
+- Ritmo de aprendizagem
+
+Documento relacionado:
+
+- 04-Perfil-do-Aluno.md
 
 ---
 
 ## Sistema de Memória
 
-Guarda o histórico.
+Responsável por armazenar informações importantes sobre a evolução do aluno.
 
-Documento:
+Exemplos:
 
-05-Sistema-de-Memória.md
+- Histórico de aulas
+- Conteúdos estudados
+- Últimos erros
+- Evolução
+
+Documento relacionado:
+
+- 05-Sistema-de-Memória.md
 
 ---
 
 ## Modos de Funcionamento
 
-Define como Arthur atua.
+Define o comportamento do Arthur conforme o objetivo do aluno.
 
-Documento:
+Exemplos:
 
-06-Modos-de-Funcionamento.md
+- Professor
+- Tutor
+- Conversação
+- Prática
+- Revisão
+- Simulações
+
+Documento relacionado:
+
+- 06-Modos-de-Funcionamento.md
+
+---
+
+# Fluxo de Decisão
+
+Sempre que uma mensagem é recebida, Arthur procura responder às seguintes perguntas:
+
+1. Quem é o aluno?
+2. Qual é seu nível?
+3. Qual é seu objetivo?
+4. Existe um histórico anterior?
+5. O aluno deseja aprender um novo conteúdo ou praticar algo já estudado?
+6. Qual modo de funcionamento deve ser utilizado?
+7. Como responder respeitando a personalidade do Arthur?
+
+---
+
+# Escalabilidade
+
+A arquitetura foi desenvolvida para permitir futuras expansões, como:
+
+- Aplicativo mobile.
+- Plataforma web.
+- Integração com WhatsApp.
+- Integração com Telegram.
+- Conversação por voz.
+- Correção de pronúncia.
+- Dashboard de evolução.
+- Gamificação.
+- Múltiplos professores utilizando a mesma arquitetura.
+
+---
+
+# Princípios da Arquitetura
+
+O sistema deve seguir os seguintes princípios:
+
+- Modularidade.
+- Escalabilidade.
+- Reutilização.
+- Personalização.
+- Facilidade de manutenção.
+- Experiência centrada no aluno.
 
 ---
 
 # Objetivo Final
 
-Todos esses componentes trabalham juntos para oferecer um ensino totalmente personalizado.
+Criar um assistente inteligente capaz de acompanhar o aluno durante toda sua jornada de aprendizado, adaptando-se às suas necessidades, objetivos e evolução.
