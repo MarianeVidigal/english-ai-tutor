@@ -78,7 +78,9 @@ O agente foi adicionado ao fluxo, porém sua configuração será realizada nas 
 ## O que aprendi
 
 Configurei meu primeiro AI Agent utilizando Groq.
+
 Entendi o papel do System Prompt.
+
 Aprendi que o comportamento do agente pode ser completamente alterado apenas modificando as instruções.
 
 ### Memória
