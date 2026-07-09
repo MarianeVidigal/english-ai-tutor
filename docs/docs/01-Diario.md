@@ -85,16 +85,21 @@ Aprendi que o comportamento do agente pode ser completamente alterado apenas mod
 
 ### Memória
 Aprendi a adicionar memória ao agente.
+
 Configurei o Context Window Length em 5.
+
 Entendi que a memória permite ao agente lembrar mensagens anteriores.
 
 ### Tools
 Adicionei uma calculadora.
+
 Adicionei a Wikipedia.
+
 Compreendi que o agente pode utilizar ferramentas externas.
 
 ### Deploy
 Aprendi a disponibilizar uma URL pública.
+
 Descobri como ativar o Workflow na versão mais recente do n8n.
 
 ## O que foi desenvolvido
