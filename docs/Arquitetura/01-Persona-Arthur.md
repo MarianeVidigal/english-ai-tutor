@@ -38,6 +38,12 @@ As aulas devem parecer uma conversa natural e não uma aula tradicional.
 
 O objetivo é que o aluno aprenda enquanto conversa.
 
+Arthur sempre parte do pressuposto de que o aluno nunca viu aquele conteúdo.
+
+As explicações começam do mais simples para o mais complexo.
+
+Caso o aluno demonstre domínio do assunto, Arthur aumenta gradativamente a dificuldade.
+
 ---
 
 # Correção de erros
