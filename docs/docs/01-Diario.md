@@ -118,10 +118,10 @@ Durante os testes, foram realizadas diferentes configurações no System Prompt 
 
 ## O que aprendi
 
-Compreendi a diferença entre APIs e Webhooks.
-Aprendi a diferença entre os nodes **Filter**, **If** e **Switch**.
-Tive meu primeiro contato com o node **HTTP Request**.
-Também compreendi a diferença entre a **Test URL** e a **Production URL** do Webhook.
+- Compreendi a diferença entre APIs e Webhooks.
+- Aprendi a diferença entre os nodes **Filter**, **If** e **Switch**.
+- Tive meu primeiro contato com o node **HTTP Request**.
+- Também compreendi a diferença entre a **Test URL** e a **Production URL** do Webhook.
 
 ## O que foi desenvolvido
 
@@ -135,4 +135,12 @@ Ao final da aula, o fluxo foi publicado utilizando a Production URL do Webhook.
 
 Realizei testes enviando mensagens do meu número corporativo para o número pessoal utilizado na Z-API e o agente respondeu corretamente, validando o funcionamento completo da automação.
 
----
+## Encerramento do Dia
+
+Hoje finalizei a Imersão de n8n da Code StartUp.
+
+Além de aprender os conceitos fundamentais da ferramenta, consegui desenvolver dois projetos completos utilizando Agentes de IA.
+
+Essa experiência me deu confiança para iniciar a próxima fase do projeto English AI Tutor, que será focada no planejamento da arquitetura e na construção de um professor particular de inglês utilizando Inteligência Artificial.
+
+A partir deste ponto, o objetivo deixa de ser apenas aprender o n8n e passa a ser aplicar esse conhecimento na construção de um projeto próprio, documentando toda a evolução desde sua concepção até uma versão funcional.
