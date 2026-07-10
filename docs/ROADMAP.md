@@ -64,3 +64,22 @@ Dashboard.
 ## Versão 1.0
 
 Primeira versão completa.
+
+---
+
+# Versões Futuras
+
+## V1.1
+
+- Continuação automática das aulas.
+- Revisão inteligente.
+
+## V1.2
+
+- Modo Tutor.
+
+## V2.0
+
+- Modo Mentor.
+- Integração com cursos externos.
+- Conversação baseada em conteúdos estudados fora do Arthur.
