@@ -141,3 +141,122 @@ Além de aprender os conceitos fundamentais da ferramenta, consegui desenvolver 
 - Um agente capaz de responder automaticamente mensagens recebidas pelo WhatsApp.
 
 A partir deste ponto, o objetivo deixa de ser apenas aprender o n8n e passa a ser aplicar esse conhecimento na construção de um projeto próprio, documentando toda a evolução desde sua concepção até uma versão funcional.
+
+---
+
+# Dia 1
+
+**Data:**
+
+09/07/2026
+
+**Tempo investido: 4 horas**
+
+---
+
+## Objetivo do dia
+
+Planejar a arquitetura do projeto English AI Tutor e definir os primeiros passos para o desenvolvimento do MVP.
+
+---
+
+## O que foi desenvolvido
+
+### Documentação da Arquitetura
+
+Foram criados os seguintes documentos:
+
+- 03-Plano-de-Aprendizagem.md
+- 04-Perfil-do-Aluno.md
+- 05-Sistema-de-Memória.md
+- 06-Modos-de-Funcionamento.md
+- 07-Arquitetura-do-Sistema.md
+
+Cada documento define uma parte específica da inteligência do Professor Arthur.
+
+---
+
+### Definição da primeira interação do Arthur
+
+Foi projetada a primeira conversa entre o Professor Arthur e um novo aluno.
+
+Nessa interação Arthur deverá:
+
+- apresentar-se;
+- explicar como pode ajudar;
+- identificar o nome do aluno;
+- descobrir se o aluno já estudou inglês;
+- identificar o objetivo do aprendizado;
+- identificar a forma preferida de estudo;
+- realizar uma breve avaliação para estimar o nível de inglês;
+- montar um plano de estudos personalizado.
+
+---
+
+### Organização do projeto
+
+Foi criada a estrutura da primeira Sprint de desenvolvimento.
+
+Sprint 01:
+
+Objetivo:
+
+Construir a primeira versão funcional do Professor Arthur.
+
+Também foi definida a estratégia de desenvolvimento baseada em Sprints, aproximando o projeto do fluxo de trabalho utilizado em equipes de desenvolvimento de software.
+
+---
+
+### Modelagem inicial do sistema
+
+Foi definida a primeira estrutura de armazenamento de dados.
+
+Inicialmente será utilizado o Google Sheets como banco de dados temporário.
+
+A estrutura planejada será composta por abas independentes para:
+
+- Alunos
+- Histórico de Aulas
+- Sessões
+- Plano de Estudos
+- Conteúdos Concluídos
+
+Essa organização facilitará uma futura migração para um banco de dados relacional.
+
+---
+
+## Aprendizados
+
+Hoje compreendi melhor como um projeto de software é planejado antes do início da implementação.
+
+Percebi a importância de definir arquitetura, responsabilidades dos componentes e organização dos dados antes de construir os fluxos no n8n.
+
+Também comecei a entender conceitos de Engenharia de Software que vão além da criação de automações.
+
+---
+
+## Dificuldades
+
+Durante o planejamento surgiram diversas ideias novas para o projeto.
+
+O principal desafio foi manter o foco no MVP e evitar adicionar funcionalidades que podem ser implementadas apenas em versões futuras.
+
+---
+
+## Próximos passos
+
+- Criar a estrutura inicial do Google Sheets.
+- Modelar os dados do sistema.
+- Desenvolver o primeiro fluxo do Arthur no n8n.
+- Implementar a entrevista inicial do aluno.
+- Criar o plano de estudos personalizado.
+
+---
+
+## Reflexão do dia
+
+Hoje percebi que o English AI Tutor deixou de ser apenas uma ideia de um agente de IA.
+
+A documentação construída até aqui começou a transformar o projeto em uma plataforma de ensino estruturada.
+
+O objetivo continua sendo desenvolver um professor particular de inglês, mas agora o projeto possui uma arquitetura organizada, um plano de evolução e uma visão clara do que deverá ser entregue na primeira versão.
