@@ -24,12 +24,12 @@ Aluno já existe?
 
 ── Não
 
-   → Apresentação
-   → Entrevista Inicial
-   → Criação do Perfil
-   → Criação do Plano de Estudos
-   → Salvar informações
-   → Iniciar primeira aula
+    → Apresentação
+    → Entrevista inicial
+    → Criação do Perfil
+    → Criação do Plano de Estudo
+    → Salvar informações
+    → Iniciar primeira aula
 
 ── Sim
 
