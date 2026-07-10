@@ -22,17 +22,17 @@ Identificar o aluno
 
 Aluno já existe?
 
-├── Não
-│
-│   → Apresentação
-│   → Entrevista Inicial
-│   → Criação do Perfil
-│   → Criação do Plano de Estudos
-│   → Salvar informações
-│   → Iniciar primeira aula
-│
-└── Sim
-    │
+── Não
+
+   → Apresentação
+   → Entrevista Inicial
+   → Criação do Perfil
+   → Criação do Plano de Estudos
+   → Salvar informações
+   → Iniciar primeira aula
+
+── Sim
+
     → Carregar Perfil
     → Carregar Memória
     → Identificar modo de funcionamento
