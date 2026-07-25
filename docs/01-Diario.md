@@ -260,3 +260,63 @@ Hoje percebi que o English AI Tutor deixou de ser apenas uma ideia de um agente 
 A documentação construída até aqui começou a transformar o projeto em uma plataforma de ensino estruturada.
 
 O objetivo continua sendo desenvolver um professor particular de inglês, mas agora o projeto possui uma arquitetura organizada, um plano de evolução e uma visão clara do que deverá ser entregue na primeira versão.
+
+---
+
+# Dia 2
+
+**Data:**
+
+24/07/2026
+
+**Tempo investido: 3 horas**
+
+## O que foi desenvolvido
+
+Hoje preparei o ambiente de desenvolvimento local que será utilizado durante a construção do projeto.
+
+Principais atividades realizadas:
+
+- Instalei o Docker Desktop.
+- Identifiquei e resolvi um problema na inicialização do Docker relacionado ao WSL2.
+- Habilitei os componentes necessários do Windows para utilização do WSL2.
+- Validei o funcionamento do Docker e do WSL2 através do terminal.
+- Criei o primeiro arquivo docker-compose.yml.
+- Estruturei o ambiente para execução local do n8n.
+- Executei meu primeiro container Docker.
+- Iniciei o n8n local com sucesso.
+- Organizei a estrutura da documentação no GitHub.
+- Criei o documento 11-Ambiente-de-Desenvolvimento.md para registrar a configuração do ambiente do projeto.
+
+---
+
+## O que aprendi
+
+Hoje tive meu primeiro contato prático com Docker.
+
+Aprendi que:
+
+- Docker Desktop utiliza o WSL2 para executar containers Linux.
+- O arquivo docker-compose.yml define os serviços que serão executados pelo Docker.
+- Containers permitem executar aplicações de forma isolada e organizada.
+- O Docker Compose facilita a criação e gerenciamento de ambientes de desenvolvimento.
+- Problemas de configuração podem ser diagnosticados através de mensagens de erro e comandos no terminal.
+
+Também compreendi melhor a relação entre:
+
+- Docker
+- WSL2
+- Docker Compose
+- n8n
+
+e como essas tecnologias trabalham juntas.
+
+---
+
+## Dificuldades encontradas
+
+Durante a instalação do Docker Desktop, o sistema informou que a virtualização não estava disponível.
+
+Após investigar o problema, identifiquei que a virtualização da BIOS estava habilitada, porém o WSL2 ainda não estava configurado corretamente.
+
+Depois de habilitar os componentes necessários do Windows e reiniciar o computador, o Docker iniciou normalmente.
