@@ -243,26 +243,6 @@ O principal desafio foi manter o foco no MVP e evitar adicionar funcionalidades 
 
 ---
 
-## Próximos passos
-
-- Criar a estrutura inicial do Google Sheets.
-- Modelar os dados do sistema.
-- Desenvolver o primeiro fluxo do Arthur no n8n.
-- Implementar a entrevista inicial do aluno.
-- Criar o plano de estudos personalizado.
-
----
-
-## Reflexão do dia
-
-Hoje percebi que o English AI Tutor deixou de ser apenas uma ideia de um agente de IA.
-
-A documentação construída até aqui começou a transformar o projeto em uma plataforma de ensino estruturada.
-
-O objetivo continua sendo desenvolver um professor particular de inglês, mas agora o projeto possui uma arquitetura organizada, um plano de evolução e uma visão clara do que deverá ser entregue na primeira versão.
-
----
-
 # Dia 2
 
 **Data:**
