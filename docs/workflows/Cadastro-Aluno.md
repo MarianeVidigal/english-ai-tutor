@@ -1,6 +1,6 @@
-# Workflow - Cadastro de Aluno: 
-
 **INICIO: DIA 3**
+
+# Workflow - Cadastro de Aluno: 
 
 ## Objetivo
 
@@ -92,3 +92,6 @@ Após a execução existe um novo aluno cadastrado na planilha.
 - Registrar logs.
 - Persistir em banco SQL futuramente.
 
+**FIM: DIA 3**
+
+---
