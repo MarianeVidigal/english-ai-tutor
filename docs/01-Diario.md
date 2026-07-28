@@ -328,6 +328,33 @@ O primeiro Workflow criado foi:
 
 Sua responsabilidade é registrar um novo aluno na base de dados.
 
+## Decisão de Arquitetura
+
+Foi decidido não criar um Workflow gigantesco contendo todas as regras.
+
+Em vez disso, cada funcionalidade será construída como um Workflow independente.
+
+Arquitetura planejada:
+
+Arthur
+ - Cadastro de Aluno
+ - Buscar Perfil
+ - Registrar Aula
+ - Registrar Vocabulário
+ - Plano de Estudos
+ - Dashboard
+ - Outros módulos
+
+ - Essa arquitetura facilita:
+
+- manutenção;
+- testes;
+- reutilização;
+- escalabilidade;
+- organização do projeto.
+
+---
+
 ## Desenvolvimento no Workflows: *WF - Cadastro do Aluno*
 
 Fluxo
@@ -430,20 +457,3 @@ Campos gravados:
 Após a execução existe um novo aluno cadastrado na planilha.
 
 ---
-
-## Decisão de Arquitetura
-
-Foi decidido não criar um Workflow gigantesco contendo todas as regras.
-
-Em vez disso, cada funcionalidade será construída como um Workflow independente.
-
-Arquitetura planejada:
-
-Arthur
- - Cadastro de Aluno
- - Buscar Perfil
- - Registrar Aula
- - Registrar Vocabulário
- - Plano de Estudos
- - Dashboard
- - Outros módulos
