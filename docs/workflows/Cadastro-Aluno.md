@@ -42,17 +42,83 @@ Cadastrar um novo aluno no English AI Tutor.
 ```
 
 ---
+## Desenvolvido no Workflows *WF - Cadastro do Aluno*
 
-## Dependências
+Fluxo
 
-- Google Sheets
-- UUID Generator
+When Executed by Another Workflow
+│
+▼
+Edit Fields
+│
+▼
+Code
+│
+▼
+Google Sheets (Append Row)
 
----
+**Responsabilidade de cada nó**
+**1. When Executed by Another Workflow**
 
-## Futuras melhorias
+Recebe os dados enviados pelo Workflow principal (Arthur).
 
-- Cadastro via Google Login.
-- Cadastro via GitHub.
-- Cadastro via Microsoft.
-- Migração para PostgreSQL.
+É a porta de entrada deste workflow.
+
+Não realiza nenhuma alteração nos dados.
+
+**2. Edit Fields**
+
+Organiza todas as informações recebidas.
+
+Também define valores padrão utilizados no cadastro.
+
+Campos adicionados:
+
+status = Ativo
+versaoPerfil = 1
+
+**3. Code**
+
+Executa regras que o Edit Fields não consegue fazer sozinho.
+
+Responsabilidades:
+
+gerar UUID único do aluno;
+gerar dataCadastro;
+gerar ultimoAcesso.
+
+Exemplo:
+
+idAluno:
+27021902-65e9-4d46-8bd5-5da3f0e81678
+
+**4. Google Sheets**
+
+Insere uma nova linha na aba:
+
+Alunos
+
+Campos gravados:
+
+IdAluno
+SessionId
+Nome
+Nivel
+Objetivo
+Área
+Método
+DataCadastro
+UltimoAcesso
+Status
+VersaoPerfil
+Resultado
+
+Após a execução existe um novo aluno cadastrado na planilha.
+
+### Próximas melhorias ###
+Verificar se o aluno já existe.
+Evitar cadastros duplicados.
+Retornar informações ao Arthur.
+Registrar logs.
+Persistir em banco SQL futuramente.
+
