@@ -45,6 +45,7 @@ Ele é executado pelo workflow principal (Arthur) sempre que o agente identifica
 ```
 
 ---
+
 ## Desenvolvido no Workflows: *WF - Cadastro do Aluno*
 
 Fluxo
@@ -67,7 +68,7 @@ Google Sheets (Append Row)
 
 **Responsabilidade de cada nó**
 
-### 1. When Executed by Another Workflow
+## 1. When Executed by Another Workflow
 
 Recebe os dados enviados pelo Workflow principal (Arthur).
 
