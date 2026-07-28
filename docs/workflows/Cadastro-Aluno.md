@@ -42,19 +42,25 @@ Cadastrar um novo aluno no English AI Tutor.
 ```
 
 ---
-## Desenvolvido no Workflows *WF - Cadastro do Aluno*
+## Desenvolvido no Workflows: *WF - Cadastro do Aluno*
 
 Fluxo
 
 When Executed by Another Workflow
+
 │
 ▼
+
 Edit Fields
+
 │
 ▼
+
 Code
+
 │
 ▼
+
 Google Sheets (Append Row)
 
 **Responsabilidade de cada nó**
