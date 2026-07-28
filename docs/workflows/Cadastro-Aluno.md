@@ -2,7 +2,10 @@
 
 ## Objetivo
 
-Cadastrar um novo aluno no English AI Tutor.
+Responsável por cadastrar um novo aluno no banco de dados (Google Sheets).
+
+Este workflow não conversa diretamente com o usuário.
+Ele é executado pelo workflow principal (Arthur) sempre que o agente identifica que possui todas as informações necessárias para criar um novo perfil.
 
 ---
 
