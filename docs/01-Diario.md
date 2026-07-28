@@ -328,6 +328,8 @@ O primeiro Workflow criado foi:
 
 Sua responsabilidade é registrar um novo aluno na base de dados.
 
+---
+
 ## Decisão de Arquitetura
 
 Foi decidido não criar um Workflow gigantesco contendo todas as regras.
@@ -345,7 +347,7 @@ Arthur
  - Dashboard
  - Outros módulos
 
- - Essa arquitetura facilita:
+**Essa arquitetura facilita:**
 
 - manutenção;
 - testes;
