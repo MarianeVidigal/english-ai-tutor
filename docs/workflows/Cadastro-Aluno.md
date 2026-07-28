@@ -66,9 +66,9 @@ Google Sheets (Append Row)
 
 ---
 
-**Responsabilidade de cada nó**
+## Responsabilidade de cada nó
 
-## 1. When Executed by Another Workflow
+### 1. When Executed by Another Workflow
 
 Recebe os dados enviados pelo Workflow principal (Arthur).
 
@@ -76,9 +76,7 @@ Recebe os dados enviados pelo Workflow principal (Arthur).
 
 Não realiza nenhuma alteração nos dados.
 
-
-**2. Edit Fields**
-
+### 2. Edit Fields
 
 Organiza todas as informações recebidas.
 
@@ -89,9 +87,7 @@ Campos adicionados:
 status = Ativo
 versaoPerfil = 1
 
-
-**3. Code**
-
+### 3. Code
 
 Executa regras que o Edit Fields não consegue fazer sozinho.
 
@@ -106,9 +102,7 @@ Exemplo:
 idAluno:
 27021902-65e9-4d46-8bd5-5da3f0e81678
 
-
-**4. Google Sheets**
-
+## 4. Google Sheets
 
 Insere uma nova linha na aba:
 
@@ -128,7 +122,6 @@ UltimoAcesso
 Status
 VersaoPerfil
 Resultado
-
 
 Após a execução existe um novo aluno cadastrado na planilha.
 
