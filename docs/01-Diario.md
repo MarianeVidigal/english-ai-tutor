@@ -300,3 +300,38 @@ Durante a instalação do Docker Desktop, o sistema informou que a virtualizaç�
 Após investigar o problema, identifiquei que a virtualização da BIOS estava habilitada, porém o WSL2 ainda não estava configurado corretamente.
 
 Depois de habilitar os componentes necessários do Windows e reiniciar o computador, o Docker iniciou normalmente.
+
+---
+
+**Data:** 
+
+28/07/2026
+
+**Tempo investido: 4h44**
+
+---
+
+## Objetivo do dia
+Construção do primeiro Workflow do Arthur
+
+Hoje foi iniciado o desenvolvimento da primeira ferramenta utilizada pelo Arthur.
+
+Até este momento o Arthur apenas conversava utilizando IA.
+
+A partir deste Sprint começou a separação da arquitetura em múltiplos Workflows especializados.
+
+O primeiro Workflow criado foi:
+
+**WF - Cadastro de Aluno** (Detalhes do fluxo na pasta *Workflows*, arquivo *Cadastro de Aluno.md*)
+
+Sua responsabilidade é registrar um novo aluno na base de dados.
+
+---
+
+# Decisão de Arquitetura
+
+Foi decidido não criar um Workflow gigantesco contendo todas as regras.
+
+Em vez disso, cada funcionalidade será construída como um Workflow independente.
+
+Arquitetura planejada:
