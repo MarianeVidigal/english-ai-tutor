@@ -458,4 +458,94 @@ Campos gravados:
 
 Após a execução existe um novo aluno cadastrado na planilha.
 
+A aba **Alunos** passou a funcionar como o banco de dados inicial do projeto.
+
+No futuro esse banco poderá ser migrado para PostgreSQL sem alterar a arquitetura do Arthur.
+
 ---
+
+# Primeiro teste
+
+Foi executado manualmente o Workflow.
+
+Resultado:
+
+✔ UUID gerado corretamente.
+
+✔ Data cadastrada corretamente.
+
+✔ Linha inserida na planilha.
+
+Como o Workflow foi executado isoladamente, os campos recebidos do Arthur permaneceram vazios.
+
+Mesmo assim foi possível validar toda a lógica de cadastro.
+
+---
+
+## Arquitetura Modular
+
+Cada Workflow possui apenas uma responsabilidade.
+
+---
+
+## Workflow como Serviço
+
+O Cadastro de Aluno funciona como um pequeno serviço especializado.
+
+No futuro será chamado pelo Arthur sempre que necessário.
+
+---
+
+## Separação de responsabilidades
+
+Cada nó possui apenas uma função.
+
+Isso torna o Workflow mais organizado.
+
+---
+
+## Persistência de dados
+
+O Google Sheets passa a funcionar como banco de dados da aplicação.
+
+---
+
+## Integração externa
+
+Primeira integração completa utilizando credenciais de API.
+
+---
+
+# Próximo objetivo
+
+Na próxima Sprint o Arthur deixará de ser apenas um chatbot.
+
+Ele será capaz de:
+
+- conversar;
+- identificar quando possui todas as informações necessárias;
+- executar automaticamente o Workflow Cadastro de Aluno;
+- registrar o novo aluno na planilha;
+- continuar a conversa normalmente após o cadastro.
+
+
+Arthur
+
+▼
+
+Conversa com usuário
+
+▼
+
+(em breve)
+
+Call Workflow
+
+▼
+
+WF Cadastro de Aluno
+
+▼
+
+Google Sheets
+
