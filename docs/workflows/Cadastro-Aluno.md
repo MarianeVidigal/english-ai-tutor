@@ -98,9 +98,7 @@ Responsabilidades:
 
 Exemplo:
 
-idAluno:
-
-27021902-65e9-4d46-8bd5-5da3f0e81678
+idAluno: 27021902-65e9-4d46-8bd5-5da3f0e81678
 
 ### 4. Google Sheets
 
