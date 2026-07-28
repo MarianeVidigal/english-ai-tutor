@@ -464,7 +464,7 @@ No futuro esse banco poderá ser migrado para PostgreSQL sem alterar a arquitetu
 
 ---
 
-# Primeiro teste
+## Primeiro teste
 
 Foi executado manualmente o Workflow.
 
@@ -516,7 +516,7 @@ Primeira integração completa utilizando credenciais de API.
 
 ---
 
-# Próximo objetivo
+## Próximo objetivo
 
 Na próxima Sprint o Arthur deixará de ser apenas um chatbot.
 
