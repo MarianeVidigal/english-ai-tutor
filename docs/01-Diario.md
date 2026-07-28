@@ -337,11 +337,10 @@ Em vez disso, cada funcionalidade será construída como um Workflow independent
 Arquitetura planejada:
 
 Arthur
-│
-├── Cadastro de Aluno
-├── Buscar Perfil
-├── Registrar Aula
-├── Registrar Vocabulário
-├── Plano de Estudos
-├── Dashboard
-└── Outros módulos
+ - Cadastro de Aluno
+ - Buscar Perfil
+ - Registrar Aula
+ - Registrar Vocabulário
+ - Plano de Estudos
+ - Dashboard
+ - Outros módulos
