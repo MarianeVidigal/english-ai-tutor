@@ -46,7 +46,7 @@ Ele é executado pelo workflow principal (Arthur) sempre que o agente identifica
 
 ---
 
-## Desenvolvido no Workflows: *WF - Cadastro do Aluno*
+## Desenvolvimento no Workflows: *WF - Cadastro do Aluno*
 
 Fluxo
 
