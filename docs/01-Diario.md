@@ -328,10 +328,20 @@ Sua responsabilidade é registrar um novo aluno na base de dados.
 
 ---
 
-# Decisão de Arquitetura
+## Decisão de Arquitetura
 
 Foi decidido não criar um Workflow gigantesco contendo todas as regras.
 
 Em vez disso, cada funcionalidade será construída como um Workflow independente.
 
 Arquitetura planejada:
+
+Arthur
+│
+├── Cadastro de Aluno
+├── Buscar Perfil
+├── Registrar Aula
+├── Registrar Vocabulário
+├── Plano de Estudos
+├── Dashboard
+└── Outros módulos
