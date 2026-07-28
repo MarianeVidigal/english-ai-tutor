@@ -50,19 +50,19 @@ Ele é executado pelo workflow principal (Arthur) sempre que o agente identifica
 
 Fluxo
 
-When Executed by Another Workflow: ( Recebe os dados enviados pelo Workflow principal (Arthur).
+When Executed by Another Workflow: **( Recebe os dados enviados pelo Workflow principal (Arthur).**
 
 ▼
 
-Edit Fields: ( Organiza todas as informações recebidas.)
+Edit Fields: **( Organiza todas as informações recebidas.)**
 
 ▼
 
-Code: (Executa regras que o Edit Fields não consegue fazer sozinho.)
+Code: **(Executa regras que o Edit Fields não consegue fazer sozinho.)**
 
 ▼
 
-Google Sheets (Append Row): (Insere uma nova linha na aba)
+Google Sheets (Append Row): **(Insere uma nova linha na aba)**
 
 Alunos
 
