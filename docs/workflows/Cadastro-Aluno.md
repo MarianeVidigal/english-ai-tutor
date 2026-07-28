@@ -68,11 +68,19 @@ Google Sheets (Append Row)
 
 ### 1. When Executed by Another Workflow
 
-Recebe os dados enviados pelo Workflow principal (Arthur).
-
 É a porta de entrada deste workflow.
 
 Não realiza nenhuma alteração nos dados.
+
+Receber os dados enviados pelo Arthur.
+
+Exemplo:
+ - Nome
+ - Nível
+ - Objetivo
+ - Área
+ - Método
+ - SessionId
 
 ### 2. Edit Fields
 
@@ -88,17 +96,29 @@ versaoPerfil = 1
 
 ### 3. Code
 
-Executa regras que o Edit Fields não consegue fazer sozinho.
+Este foi o primeiro nó utilizando JavaScript.
 
-Responsabilidades:
+Inicialmente foi tentado utilizar:
 
-- gerar UUID único do aluno;
+crypto.randomUUID()
+
+Entretanto o ambiente do n8n não disponibiliza o objeto crypto.
+
+Foi necessário utilizar:
+
+crypto.randomUUID()
+
+através do módulo disponível no ambiente do n8n.
+
+O código passou a ser responsável por:
+
+- gerar UUID;
 - gerar dataCadastro;
 - gerar ultimoAcesso.
 
 Exemplo:
 
-idAluno: 27021902-65e9-4d46-8bd5-5da3f0e81678
+fc427eb0-1f61-4ab2-9313-2d135b95a252
 
 ### 4. Google Sheets
 
