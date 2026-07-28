@@ -84,9 +84,9 @@ Campos gravados:
 Após a execução existe um novo aluno cadastrado na planilha.
 
 ### Próximas melhorias
-Verificar se o aluno já existe.
-Evitar cadastros duplicados.
-Retornar informações ao Arthur.
-Registrar logs.
-Persistir em banco SQL futuramente.
+- Verificar se o aluno já existe.
+- Evitar cadastros duplicados.
+- Retornar informações ao Arthur.
+- Registrar logs.
+- Persistir em banco SQL futuramente.
 
