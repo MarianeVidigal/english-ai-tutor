@@ -99,15 +99,15 @@ versaoPerfil = 1
 Este foi o primeiro nó utilizando JavaScript.
 
 Inicialmente foi tentado utilizar:
-
+{
 crypto.randomUUID()
-
+}
 Entretanto o ambiente do n8n não disponibiliza o objeto crypto.
 
 Foi necessário utilizar:
-
+{
 crypto.randomUUID()
-
+}
 através do módulo disponível no ambiente do n8n.
 
 O código passou a ser responsável por:
