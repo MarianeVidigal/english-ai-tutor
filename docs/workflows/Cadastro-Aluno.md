@@ -67,9 +67,7 @@ Google Sheets (Append Row)
 
 **Responsabilidade de cada nó**
 
-
-**1. When Executed by Another Workflow**
-
+### 1. When Executed by Another Workflow
 
 Recebe os dados enviados pelo Workflow principal (Arthur).
 
