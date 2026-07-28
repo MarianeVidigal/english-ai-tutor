@@ -51,13 +51,13 @@ Ele é executado pelo workflow principal (Arthur) sempre que o agente identifica
 Fluxo
 
 When Executed by Another Workflow
-│
+
 ▼
 Edit Fields
-│
+
 ▼
 Code
-│
+
 ▼
 Google Sheets (Append Row)
 
