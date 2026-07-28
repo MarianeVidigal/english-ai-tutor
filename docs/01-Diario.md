@@ -325,9 +325,109 @@ A partir deste Sprint começou a separação da arquitetura em múltiplos Workfl
 O primeiro Workflow criado foi:
 
 **WF - Cadastro de Aluno** 
-(Detalhes do fluxo na pasta *Workflows*, arquivo: *Cadastro de Aluno.md*)
 
 Sua responsabilidade é registrar um novo aluno na base de dados.
+
+## Desenvolvimento no Workflows: *WF - Cadastro do Aluno*
+
+Fluxo
+
+When Executed by Another Workflow
+
+▼
+
+Edit Fields
+
+▼
+
+Code
+
+▼
+
+Google Sheets (Append Row)
+
+## Responsabilidade de cada nó
+
+### 1. When Executed by Another Workflow
+
+É a porta de entrada deste workflow.
+
+Não realiza nenhuma alteração nos dados.
+
+Receber os dados enviados pelo Arthur.
+
+Exemplo:
+ - Nome
+ - Nível
+ - Objetivo
+ - Área
+ - Método
+ - SessionId
+
+### 2. Edit Fields
+
+Organiza todas as informações recebidas.
+
+Também define valores padrão utilizados no cadastro.
+
+Campos adicionados:
+
+status = Ativo
+
+versaoPerfil = 1
+
+### 3. Code
+
+Este foi o primeiro nó utilizando JavaScript.
+
+Inicialmente foi tentado utilizar:
+
+```
+crypto.randomUUID()
+```
+
+Entretanto o ambiente do n8n não disponibiliza o objeto crypto.
+
+Foi necessário utilizar:
+
+```
+crypto.randomUUID()
+```
+
+através do módulo disponível no ambiente do n8n.
+
+O código passou a ser responsável por:
+
+- gerar UUID;
+- gerar dataCadastro;
+- gerar ultimoAcesso.
+
+Exemplo:
+
+fc427eb0-1f61-4ab2-9313-2d135b95a252
+
+### 4. Google Sheets
+
+Insere uma nova linha na aba:
+
+Alunos
+
+Campos gravados:
+
+- IdAluno
+- SessionId
+- Nome
+- Nivel
+- Objetivo
+- Área
+- Método
+- DataCadastro
+- UltimoAcesso
+- Status
+- VersaoPerfil
+- Resultado
+
+Após a execução existe um novo aluno cadastrado na planilha.
 
 ---
 
