@@ -48,17 +48,14 @@ Fluxo
 
 When Executed by Another Workflow
 
-│
 ▼
 
 Edit Fields
 
-│
 ▼
 
 Code
 
-│
 ▼
 
 Google Sheets (Append Row)
