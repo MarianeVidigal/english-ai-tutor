@@ -53,14 +53,35 @@ Fluxo
 When Executed by Another Workflow: ( Recebe os dados enviados pelo Workflow principal (Arthur).
 
 ▼
-Edit Fields
+
+Edit Fields: ( Organiza todas as informações recebidas.)
 
 ▼
-Code
+
+Code: (Executa regras que o Edit Fields não consegue fazer sozinho.)
 
 ▼
-Google Sheets (Append Row)
 
+Google Sheets (Append Row): (Insere uma nova linha na aba)
+
+Alunos
+
+Campos gravados:
+
+- IdAluno
+- SessionId
+- Nome
+- Nivel
+- Objetivo
+- Área
+- Método
+- DataCadastro
+- UltimoAcesso
+- Status
+- VersaoPerfil
+- Resultado
+
+Após a execução existe um novo aluno cadastrado na planilha.
 
 ### Próximas melhorias
 Verificar se o aluno já existe.
