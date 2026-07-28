@@ -303,6 +303,8 @@ Depois de habilitar os componentes necessários do Windows e reiniciar o computa
 
 ---
 
+# Dia 3
+
 **Data:** 
 
 28/07/2026
@@ -322,7 +324,8 @@ A partir deste Sprint começou a separação da arquitetura em múltiplos Workfl
 
 O primeiro Workflow criado foi:
 
-**WF - Cadastro de Aluno** (Detalhes do fluxo na pasta *Workflows*, arquivo *Cadastro de Aluno.md*)
+**WF - Cadastro de Aluno** 
+(Detalhes do fluxo na pasta *Workflows*, arquivo: *Cadastro de Aluno.md*)
 
 Sua responsabilidade é registrar um novo aluno na base de dados.
 
