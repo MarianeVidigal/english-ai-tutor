@@ -725,7 +725,7 @@ escrever textos.
 
 Sua única responsabilidade é extrair informações.
 
-**Structured Output Parser**
+### Structured Output Parser
 
 Durante o desenvolvimento foi introduzida uma nova ferramenta do n8n:
 
@@ -777,6 +777,44 @@ o Parser tenta remover essas informações antes de entregar o resultado.
 
 Isso aumenta bastante a confiabilidade do Workflow.
 
+###  Problema encontrado
+
+Ao executar o Workflow surgiu o erro:
+```
+A Model sub-node must be connected and enabled
+```
+Após investigação descobrimos que o próprio Structured Output Parser possui uma entrada obrigatória chamada:
+```
+Model *
+```
+Essa entrada exige um Chat Model exclusivo para o Parser.
+
+Foi necessário adicionar um segundo nó:
+
+Groq Chat Model
+
+ligado diretamente ao Structured Output Parser.
+
+A estrutura final ficou assim:
+```
+When Executed by Another Workflow
+                │
+                ▼
+             AI Agent
+            │         │
+            │         ▼
+            │   Groq Chat Model
+            │
+            ▼
+Structured Output Parser
+            │
+            ▼
+      Groq Chat Model
+```
+Após essa alteração o erro desapareceu.
+
+---
+
 ## Estado atual do projeto
 
 Atualmente o Workflow já consegue:
@@ -792,4 +830,3 @@ Atualmente o Workflow já consegue:
 Entretanto o Workflow ainda não está recebendo corretamente o conteúdo da conversa durante os testes isolados.
 
 Esse será o próximo passo do desenvolvimento.
-
