@@ -675,3 +675,19 @@ Google Sheets
 Essa mudança separa claramente as responsabilidades.
 
 Cada Workflow agora executará apenas uma função específica.
+
+## Novo Workflow criado
+
+Foi criado um novo Workflow chamado:
+
+**WF - Extrair Perfil**
+
+Responsabilidade:
+
+Ler a conversa realizada pelo Arthur e transformar linguagem natural em um objeto JSON estruturado.
+
+Este Workflow não possui nenhuma responsabilidade de cadastro.
+
+Ele apenas extrai informações.
+
+
