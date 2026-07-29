@@ -34,8 +34,6 @@ Tempo investido na Aula 1, 2 e 3: 3h16min
 
 ### Aula 1: Introdução às Ferramentas do n8n e Organização da Base de Automação.
 
----
-
 ## O que aprendi
 
 **Trigger**
@@ -76,8 +74,6 @@ O agente foi adicionado ao fluxo, porém sua configuração será realizada nas 
 ---
 
 ### Aula 2: Construindo e finalizando o agente de IA
-
----
 
 ## O que aprendi
 
