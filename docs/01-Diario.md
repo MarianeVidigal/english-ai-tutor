@@ -874,11 +874,11 @@ Depois da validação individual do Extrator foi realizada sua integração com 
 
 Foi utilizado o nó:
 
-Execute Sub-workflow
+**Execute Sub-workflow**
 
 Esse nó passou a enviar automaticamente os dados extraídos para o Workflow:
 
-WF - Cadastro de Aluno
+**WF - Cadastro de Aluno**
 
 Durante os testes foi confirmado que todos os campos estavam sendo transmitidos corretamente.
 
