@@ -636,3 +636,42 @@ Em alguns testes a IA chegou inclusive a montar corretamente todos os dados:
   "sessionId": "123456"
 }
 ```
+
+Porém o próprio Workflow Tool rejeitava essas informações durante a validação.
+
+## Decisão
+
+Ao invés de continuar tentando contornar as limitações do Workflow Tool, foi tomada uma decisão importante.
+
+Toda a arquitetura foi redesenhada.
+
+Arquitetura antiga:
+```
+Arthur
+
+  ▼
+Call Workflow Tool
+
+ ▼
+Cadastro
+```
+
+Nova arquitetura:
+```
+Arthur
+
+  ▼
+WF - Extrair Perfil
+
+  ▼
+JSON Estruturado
+
+  ▼
+WF - Cadastro
+
+  ▼
+Google Sheets
+```
+Essa mudança separa claramente as responsabilidades.
+
+Cada Workflow agora executará apenas uma função específica.
