@@ -34,23 +34,25 @@ Tempo investido na Aula 1, 2 e 3: 3h16min
 
 ### Aula 1: Introdução às Ferramentas do n8n e Organização da Base de Automação.
 
+---
+
 ## O que aprendi
 
-### Trigger
+**Trigger**
 
 Aprendi que todo fluxo no n8n inicia por meio de um gatilho (Trigger). Nesta aula foi utilizado o node **On Chat Message**, responsável por iniciar o fluxo sempre que uma nova mensagem é enviada no chat.
 
-### Edit Fields
+**Edit Fields**
 
 Aprendi como utilizar o node **Edit Fields**, responsável por criar, editar ou organizar informações que serão utilizadas pelos próximos nodes do fluxo.
 
-### Google Sheets
+**Google Sheets**
 
 Realizei a integração do fluxo com o Google Sheets utilizando a ação **Append Row in Sheet**, permitindo registrar automaticamente todas as mensagens enviadas no chat.
 
 Também conheci outras possibilidades de integração disponíveis para o Google Sheets.
 
-### Arquitetura de um Agente de IA
+**Arquitetura de um Agente de IA**
 
 Compreendi que um agente normalmente é composto por quatro pilares principais:
 
@@ -74,6 +76,8 @@ O agente foi adicionado ao fluxo, porém sua configuração será realizada nas 
 ---
 
 ### Aula 2: Construindo e finalizando o agente de IA
+
+---
 
 ## O que aprendi
 
