@@ -649,10 +649,10 @@ Arquitetura antiga:
 ```
 Arthur
 
-  ▼
+   ▼
 Call Workflow Tool
 
- ▼
+   ▼
 Cadastro
 ```
 
@@ -660,23 +660,23 @@ Nova arquitetura:
 ```
 Arthur
 
-  ▼
+   ▼
 WF - Extrair Perfil
 
-  ▼
+   ▼
 JSON Estruturado
 
-  ▼
+   ▼
 WF - Cadastro
 
-  ▼
+   ▼
 Google Sheets
 ```
 Essa mudança separa claramente as responsabilidades.
 
 Cada Workflow agora executará apenas uma função específica.
 
-## Novo Workflow criado
+### Novo Workflow criado
 
 Foi criado um novo Workflow chamado:
 
@@ -689,5 +689,107 @@ Ler a conversa realizada pelo Arthur e transformar linguagem natural em um objet
 Este Workflow não possui nenhuma responsabilidade de cadastro.
 
 Ele apenas extrai informações.
+```
+When Executed by Another Workflow
 
+     ▼
+AI Agent
+
+     ▼
+Structured Output Parser
+```
+Posteriormente esse Workflow será conectado ao Workflow de Cadastro.
+
+### AI Agent
+
+O AI Agent deixou de ser um professor de inglês.
+
+Dentro deste Workflow ele passou a exercer apenas uma função:
+
+Extrator de Dados
+
+Foi criado um novo System Prompt extremamente objetivo.
+
+Seu papel é:
+
+analisar o texto recebido;
+identificar as informações do aluno;
+entregar apenas dados estruturados.
+
+Ele não deve:
+
+conversar;
+responder perguntas;
+explicar o que fez;
+escrever textos.
+
+Sua única responsabilidade é extrair informações.
+
+**Structured Output Parser**
+
+Durante o desenvolvimento foi introduzida uma nova ferramenta do n8n:
+
+Structured Output Parser
+Finalidade
+
+Forçar o AI Agent a responder obrigatoriamente seguindo um formato pré-definido.
+
+Ao invés de responder livremente:
+```
+Olá!
+
+Seu nome é Mariane...
+```
+O AI passa a responder obrigatoriamente:
+```
+{
+  "nome": "...",
+  "nivel": "...",
+  "objetivo": "...",
+  "area": "...",
+  "metodo": "..."
+}
+```
+### Auto-Fix Format
+
+Também foi ativada a opção:
+
+Sua finalidade é tentar corrigir automaticamente pequenas falhas no formato retornado pelo modelo.
+
+Exemplo:
+
+Se o modelo responder:
+```
+Claro!
+
+{
+...
+}
+```
+ou utilizar Markdown:
+
+```json
+{
+...
+}
+```
+o Parser tenta remover essas informações antes de entregar o resultado.
+
+Isso aumenta bastante a confiabilidade do Workflow.
+
+## Estado atual do projeto
+
+Atualmente o Workflow já consegue:
+
+✔ Utilizar Structured Output.
+
+✔ Validar automaticamente o formato da resposta.
+
+✔ Gerar JSON estruturado.
+
+✔ Corrigir automaticamente pequenas falhas de formatação.
+
+Entretanto o Workflow ainda não está recebendo corretamente o conteúdo da conversa durante os testes isolados.
+
+Esse será o próximo passo do desenvolvimento.
 
