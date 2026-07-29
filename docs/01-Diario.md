@@ -36,21 +36,21 @@ Tempo investido na Aula 1, 2 e 3: 3h16min
 
 ## O que aprendi
 
-**Trigger**
+### Trigger
 
 Aprendi que todo fluxo no n8n inicia por meio de um gatilho (Trigger). Nesta aula foi utilizado o node **On Chat Message**, responsável por iniciar o fluxo sempre que uma nova mensagem é enviada no chat.
 
-**Edit Fields**
+### Edit Fields
 
 Aprendi como utilizar o node **Edit Fields**, responsável por criar, editar ou organizar informações que serão utilizadas pelos próximos nodes do fluxo.
 
-**Google Sheets**
+### Google Sheets
 
 Realizei a integração do fluxo com o Google Sheets utilizando a ação **Append Row in Sheet**, permitindo registrar automaticamente todas as mensagens enviadas no chat.
 
 Também conheci outras possibilidades de integração disponíveis para o Google Sheets.
 
-**Arquitetura de um Agente de IA**
+### Arquitetura de um Agente de IA
 
 Compreendi que um agente normalmente é composto por quatro pilares principais:
 
@@ -114,7 +114,7 @@ Durante os testes, foram realizadas diferentes configurações no System Prompt 
 
 ---
 
-### Aula 03: Agente Integrado ao WhatsApp com registro automático de leads no Google Sheets utilizando a Z-API.
+### Aula 03: Agente Integrado ao WhatsApp com registro automático de leads no Google Sheets usando Z-API.
 
 ## O que aprendi
 
