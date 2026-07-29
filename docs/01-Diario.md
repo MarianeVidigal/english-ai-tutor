@@ -589,11 +589,15 @@ Google Sheets
 
 **Tempo investido: 6h20**
 
+---
+
 ## Objetivo da Sprint
 
 O objetivo desta Sprint era permitir que o Arthur cadastrasse automaticamente um novo aluno no Google Sheets após coletar todas as informações necessárias durante a conversa.
 
 Durante o desenvolvimento descobri limitações na arquitetura utilizada inicialmente e decidimos refatorar completamente essa parte do projeto para torná-la mais modular, robusta e próxima de uma arquitetura utilizada em sistemas reais de Inteligência Artificial.
+
+---
 
 ## O que já estava funcionando antes desta Sprint
 
@@ -607,6 +611,8 @@ Estrutura inicial do cadastro funcionando.
 AI Agent (Arthur) realizando a conversa normalmente.
 
 O problema era apenas a comunicação entre o Arthur e o Workflow de Cadastro.
+
+---
 
 ## Dificuldades encontradas
 
@@ -638,6 +644,8 @@ Em alguns testes a IA chegou inclusive a montar corretamente todos os dados:
 ```
 
 Porém o próprio Workflow Tool rejeitava essas informações durante a validação.
+
+---
 
 ## Decisão
 
@@ -676,6 +684,8 @@ Essa mudança separa claramente as responsabilidades.
 
 Cada Workflow agora executará apenas uma função específica.
 
+---
+
 ### Novo Workflow criado
 
 Foi criado um novo Workflow chamado:
@@ -699,6 +709,8 @@ AI Agent
 Structured Output Parser
 ```
 Posteriormente esse Workflow será conectado ao Workflow de Cadastro.
+
+---
 
 ### AI Agent
 
@@ -725,6 +737,8 @@ escrever textos.
 
 Sua única responsabilidade é extrair informações.
 
+---
+
 ### Structured Output Parser
 
 Durante o desenvolvimento foi introduzida uma nova ferramenta do n8n:
@@ -750,6 +764,8 @@ O AI passa a responder obrigatoriamente:
   "metodo": "..."
 }
 ```
+---
+
 ### Auto-Fix Format
 
 Também foi ativada a opção:
@@ -776,6 +792,8 @@ ou utilizar Markdown:
 o Parser tenta remover essas informações antes de entregar o resultado.
 
 Isso aumenta bastante a confiabilidade do Workflow.
+
+--- 
 
 ###  Problema encontrado
 
