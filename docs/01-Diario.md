@@ -257,7 +257,7 @@ Hoje preparei o ambiente de desenvolvimento local que será utilizado durante a 
 
 Principais atividades realizadas:
 
-- Instalei o Docker Desktop.
+- Instalei o Docker Desktop para desenvolvimento do projeto English AI Tutor
 - Identifiquei e resolvi um problema na inicialização do Docker relacionado ao WSL2.
 - Habilitei os componentes necessários do Windows para utilização do WSL2.
 - Validei o funcionamento do Docker e do WSL2 através do terminal.
@@ -270,10 +270,6 @@ Principais atividades realizadas:
 
 ---
 
-## O que aprendi
-
-Hoje tive meu primeiro contato prático com Docker.
-
 Aprendi que:
 
 - Docker Desktop utiliza o WSL2 para executar containers Linux.
@@ -282,16 +278,50 @@ Aprendi que:
 - O Docker Compose facilita a criação e gerenciamento de ambientes de desenvolvimento.
 - Problemas de configuração podem ser diagnosticados através de mensagens de erro e comandos no terminal.
 
-Também compreendi melhor a relação entre:
+---
 
-- Docker
+## Ferramentas
+
+- Docker Desktop
 - WSL2
-- Docker Compose
 - n8n
-
-e como essas tecnologias trabalham juntas.
+- VS Code
+- GitHub
 
 ---
+
+## Configuração
+
+### Docker
+
+Instalado localmente.
+
+### WSL2
+
+Utilizado como backend do Docker Desktop.
+
+### n8n
+
+Executado através de Docker Compose.
+
+Porta:
+
+5678
+
+URL Local:
+
+http://localhost:5678
+
+---
+
+## Objetivo futuro
+
+Este ambiente permitirá adicionar novos serviços como:
+
+- PostgreSQL
+- Qdrant
+- Redis
+- Ollama
 
 ## Dificuldades encontradas
 
