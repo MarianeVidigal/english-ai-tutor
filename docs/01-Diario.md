@@ -337,7 +337,7 @@ Depois de habilitar os componentes necessários do Windows e reiniciar o computa
 
 **Data:** 
 
-28/07/2026
+27/07/2026
 
 **Tempo investido: 4h44**
 
@@ -579,3 +579,60 @@ WF Cadastro de Aluno
 
 Google Sheets
 
+---
+
+# Dia 4
+
+**Data:** 
+
+28/07/2026
+
+**Tempo investido: 6h20**
+
+## Objetivo da Sprint
+
+O objetivo desta Sprint era permitir que o Arthur cadastrasse automaticamente um novo aluno no Google Sheets após coletar todas as informações necessárias durante a conversa.
+
+Durante o desenvolvimento descobri limitações na arquitetura utilizada inicialmente e decidimos refatorar completamente essa parte do projeto para torná-la mais modular, robusta e próxima de uma arquitetura utilizada em sistemas reais de Inteligência Artificial.
+
+## O que já estava funcionando antes desta Sprint
+
+Antes de iniciar os trabalhos de hoje, o projeto já possuía:
+
+Workflow de Cadastro de Aluno criado.
+Integração funcionando com Google Sheets.
+Geração automática de UUID para cada aluno.
+Criação automática da Data de Cadastro.
+Estrutura inicial do cadastro funcionando.
+AI Agent (Arthur) realizando a conversa normalmente.
+
+O problema era apenas a comunicação entre o Arthur e o Workflow de Cadastro.
+
+## Dificuldades encontradas
+
+Inicialmente utilizamos o recurso:
+```
+Call n8n Workflow Tool
+```
+A ideia era que o Arthur chamasse diretamente o Workflow de Cadastro e enviasse os dados preenchidos durante a conversa.
+
+Entretanto começaram a surgir diversos problemas.
+
+Os principais foram:
+
+parâmetros chegando como null;
+erro de validação do schema;
+campos sendo considerados inválidos;
+dificuldade do modelo em preencher corretamente todos os parâmetros da ferramenta.
+
+Em alguns testes a IA chegou inclusive a montar corretamente todos os dados:
+```
+{
+  "nome": "Rodrigo",
+  "nivel": "zero",
+  "objetivo": "viajar",
+  "area": "T.I",
+  "metodo": "pratica",
+  "sessionId": "123456"
+}
+```
