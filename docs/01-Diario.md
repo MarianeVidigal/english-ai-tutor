@@ -32,7 +32,7 @@ Data: 08/07/2026
 
 Tempo investido na Aula 1, 2 e 3: 3h16min
 
-## Aula 1: Introdução às Ferramentas do n8n e Organização da Base de Automação.
+### Aula 1: Introdução às Ferramentas do n8n e Organização da Base de Automação.
 
 ## O que aprendi
 
@@ -73,7 +73,7 @@ O agente foi adicionado ao fluxo, porém sua configuração será realizada nas 
 
 ---
 
-## Aula 2: Construindo e finalizando o agente de IA
+### Aula 2: Construindo e finalizando o agente de IA
 
 ## O que aprendi
 
@@ -114,7 +114,7 @@ Durante os testes, foram realizadas diferentes configurações no System Prompt 
 
 ---
 
-## Aula 03: Agente Integrado ao WhatsApp com registro automático de leads no Google Sheets utilizando a Z-API.
+### Aula 03: Agente Integrado ao WhatsApp com registro automático de leads no Google Sheets utilizando a Z-API.
 
 ## O que aprendi
 
