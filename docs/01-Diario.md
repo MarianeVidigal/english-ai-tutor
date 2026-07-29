@@ -653,37 +653,6 @@ Ao invés de continuar tentando contornar as limitações do Workflow Tool, foi 
 
 Toda a arquitetura foi redesenhada.
 
-Arquitetura antiga:
-```
-Arthur
-
-   ▼
-Call Workflow Tool
-
-   ▼
-Cadastro
-```
-
-Nova arquitetura:
-```
-Arthur
-
-   ▼
-WF - Extrair Perfil
-
-   ▼
-JSON Estruturado
-
-   ▼
-WF - Cadastro
-
-   ▼
-Google Sheets
-```
-Essa mudança separa claramente as responsabilidades.
-
-Cada Workflow agora executará apenas uma função específica.
-
 ---
 
 ### Novo Workflow criado
@@ -692,27 +661,41 @@ Foi criado um novo Workflow chamado:
 
 **WF - Extrair Perfil**
 
-Responsabilidade:
+Sua única responsabilidade passou a ser interpretar a conversa realizada pelo Arthur e transformar linguagem natural em dados estruturados.
 
-Ler a conversa realizada pelo Arthur e transformar linguagem natural em um objeto JSON estruturado.
-
-Este Workflow não possui nenhuma responsabilidade de cadastro.
-
-Ele apenas extrai informações.
+A arquitetura final ficou da seguinte forma:
 ```
-When Executed by Another Workflow
-
-     ▼
-AI Agent
-
-     ▼
-Structured Output Parser
+Arthur
+    │
+    ▼
+WF - Extrair Perfil
+    │
+    ▼
+AI Agent (Extrator)
+    │
+    ▼
+Edit Fields
+    │
+    ▼
+Execute Sub-workflow
+    │
+    ▼
+WF - Cadastro de Aluno
+    │
+    ▼
+Google Sheets
 ```
-Posteriormente esse Workflow será conectado ao Workflow de Cadastro.
+Com essa alteração, o Arthur deixou de interpretar e cadastrar diretamente o aluno.
+
+Agora ele apenas conversa normalmente.
+
+Toda a lógica de interpretação e cadastro ficou isolada em workflows especializados.
+
+Essa mudança tornou a arquitetura muito mais organizada, reutilizável e escalável.
 
 ---
 
-### AI Agent
+### AI Agent 
 
 O AI Agent deixou de ser um professor de inglês.
 
@@ -791,8 +774,6 @@ ou utilizar Markdown:
 ```
 o Parser tenta remover essas informações antes de entregar o resultado.
 
-Isso aumenta bastante a confiabilidade do Workflow.
-
 --- 
 
 ###  Problema encontrado
@@ -848,3 +829,130 @@ Atualmente o Workflow já consegue:
 Entretanto o Workflow ainda não está recebendo corretamente o conteúdo da conversa durante os testes isolados.
 
 Esse será o próximo passo do desenvolvimento.
+
+---
+
+# Dia 5
+
+**Data:** 
+
+29/07/2026
+
+**Tempo investido: 2h30**
+
+---
+
+**Continuação do objetivo do dia anterior, ocorreram alguns erros e não conseguir chegar ao resultado esperado.**
+
+---
+
+## Desenvolvimento do WF - Extrair Perfil
+
+
+Inicialmente ele foi desenvolvido utilizando um Manual Trigger, permitindo testar seu funcionamento de forma isolada, sem depender do Workflow principal do Arthur.
+
+Durante esse processo foram utilizados os seguintes componentes:
+
+- Manual Trigger
+- Edit Fields (simulação da conversa)
+- AI Agent
+- Groq Chat Model
+- Structured Output Parser
+- Edit Fields (organização da saída)
+
+Após diversos testes foi confirmado que o Workflow era capaz de transformar corretamente uma conversa em um objeto JSON estruturado contendo:
+
+- Nome
+- Nível
+- Objetivo
+- Área
+- Método
+
+Somente após essa validação o Manual Trigger foi removido e substituído novamente pelo nó When Executed by Another Workflow.
+
+Depois da validação individual do Extrator foi realizada sua integração com o Workflow de Cadastro.
+
+Foi utilizado o nó:
+
+Execute Sub-workflow
+
+Esse nó passou a enviar automaticamente os dados extraídos para o Workflow:
+
+WF - Cadastro de Aluno
+
+Durante os testes foi confirmado que todos os campos estavam sendo transmitidos corretamente.
+
+A partir dessas informações o Workflow gerou automaticamente:
+
+- idAluno (UUID);
+- dataCadastro;
+- ultimoAcesso;
+- status;
+- versão do perfil.
+
+Em seguida realizou o cadastro no Google Sheets com sucesso.
+
+---
+
+Após a integração completa foi identificado um detalhe importante.
+
+Na planilha a data estava correta, mas o horário estava com outro fuso, tive que alterar o código no Workflow WF - Cadastro de Aluno
+
+Antes:
+```
+const agora = new Date().toISOString();
+
+aluno.dataCadastro = agora;
+aluno.ultimoAcesso = agora;
+```
+
+Depois: 
+```
+const agora = new Date();
+
+const dataHoraBrasil = agora
+	.toLocaleString("sv-SE", {
+		timeZone: "America/Sao_Paulo",
+		hour12: false,
+	})
+	.replace(",", "");
+
+aluno.dataCadastro = dataHoraBrasil;
+aluno.ultimoAcesso = dataHoraBrasil;
+```
+---
+
+## Testes realizados
+
+Foram realizados testes completos simulando novos alunos.
+
+Fluxo validado:
+
+- Usuário conversa normalmente com o Arthur.
+- Arthur coleta todas as informações necessárias.
+- Arthur chama o Workflow WF - Extrair Perfil.
+- O Workflow interpreta toda a conversa utilizando IA.
+- Os dados são organizados em formato estruturado.
+- O Workflow chama automaticamente o WF - Cadastro de Aluno.
+- O Cadastro gera UUID e datas.
+- O Cadastro grava todas as informações no Google Sheets.
+
+Todos os testes foram concluídos com sucesso.
+
+---
+
+## Resultado Final da Sprint
+
+Ao término desta etapa o Professor Arthur passou a possuir sua primeira funcionalidade completa.
+
+Agora ele é capaz de:
+
+- conversar naturalmente com um novo aluno;
+- identificar automaticamente informações importantes durante a conversa;
+- estruturar essas informações utilizando Inteligência Artificial;
+- cadastrar automaticamente o aluno;
+- gerar identificadores únicos;
+- registrar datas padronizadas;
+- armazenar permanentemente todas as informações em sua base de dados.
+
+Essa foi a primeira funcionalidade completa do projeto, envolvendo conversa, inteligência artificial, regras de negócio e persistência de dados.
