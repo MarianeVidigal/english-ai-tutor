@@ -1128,38 +1128,37 @@ Concluir a arquitetura do Arthur, validar o fluxo completo de autenticação, ca
 
 ## Arquitetura
 
+A arquitetura do projeto.
+```
+Gateway
+↓
+Arthur Core
+↓
+Autenticação / Cadastro
+↓
+Professor Arthur
+```
+Responsabilidades:
+
+### Gateway
+
+- ponto único de entrada para qualquer plataforma.
+
 ### Arthur Core
 
 Foi decidido que o Arthur Core será responsável exclusivamente pelo controle da navegação do sistema.
 
-Responsabilidades:
+- controla toda a navegação;
+- identifica novos alunos;
+- identifica alunos cadastrados;
+- realiza autenticação;
+- realiza cadastro;
+- decide quais workflows executar.
 
-- identificar se o usuário possui cadastro;
-- conduzir o fluxo de autenticação;
-- conduzir o fluxo de cadastro;
-- decidir qual ferramenta utilizar;
-- nunca ensinar inglês.
+### Professor Arthur
 
-O ensino ficará totalmente sob responsabilidade do Professor Arthur.
-
----
-
-### Separação dos agentes
-
-Foi consolidada a arquitetura em dois agentes:
-
-**Arthur Core**
-
-- controla o sistema;
-- autentica usuários;
-- cadastra alunos;
-- inicia as aulas.
-
-**Professor Arthur**
-
-- ensina inglês;
-- personaliza as aulas;
-- acompanha a evolução do aluno.
+- responsável exclusivamente pelo ensino;
+utilizará o perfil do aluno para personalizar as aulas.
 
 Essa separação facilita a manutenção e futuras expansões.
 
@@ -1199,28 +1198,6 @@ Foram adicionadas regras para:
 - utilizar WF - Autenticacao somente quando possuir Token e Código.
 
 Também foram adicionadas restrições para impedir que o Arthur invente informações.
-
----
-
-## Fluxo de autenticação
-
-Foi validado o fluxo:
-```
-Usuário
-↓
-Arthur Core
-↓
-Pergunta se possui cadastro
-↓
-Solicita Token
-↓
-Solicita Código
-↓
-WF - Autenticacao
-↓
-Autenticado
-```
-Todos os testes passaram.
 
 ---
 
@@ -1294,43 +1271,61 @@ Foram adicionadas diversas formas de respostas equivalentes ao prompt.
 
 ## Testes realizados
 
-### Teste 1
+### Teste 1 — Aluno já cadastrado
 
-Aluno já cadastrado: TOKEN CORRETO e CODIGO CORRETO
+Fluxo testado:
 
-Resultado:
-
-Aprovado.
-
-### Teste 2
-
-Token inválido.
+- identificação de aluno existente;
+- solicitação do Token;
+- solicitação do Código de Segurança;
+- autenticação;
+- continuação da conversa.
 
 Resultado:
 
-Aprovado.
+✅ Aprovado.
 
-### Teste 3
+### Teste 2 — Token inválido
 
-Respostas naturais.
+Fluxo testado:
 
-Exemplos:
+- tentativa de autenticação com dados incorretos.
+
+Resultado:
+
+✅ O Arthur identificou a falha e solicitou novas informações corretamente.
+
+### Teste 3 — Interpretação de respostas naturais
+
+Foram testadas respostas como:
 
 - Já utilizo
 - Sou aluno
 - Tenho cadastro
+- Já utilizei o Arthur
 
 Resultado:
 
-Aprovado.
+✅ O Arthur conseguiu interpretar corretamente todas as respostas sem exigir apenas "Sim" ou "Não".
 
-### Teste 4
+### Teste 4 — Cadastro de novo aluno
 
-Cadastro de novo aluno.
+Fluxo validado:
 
-Resultado:
+- perguntas realizadas uma por vez;
+- coleta de todas as informações;
+- execução do WF - Extrair Perfil;
+- execução do WF - Cadastro de Aluno;
+- gravação na planilha;
+- retorno do Token e Código de Segurança.
 
-Aprovado após correções no retorno do workflow.
+Durante o primeiro teste foi identificado um problema onde o modelo inventava o Token e o Código de Segurança.
+
+Após ajustes no retorno do workflow, o problema foi resolvido.
+
+Resultado final:
+
+✅ O Arthur passou a informar exatamente os dados gerados pelo sistema.
 
 ---
 
@@ -1347,20 +1342,39 @@ Foi decidido que:
 
 ## Situação atual do projeto
 
-O Arthur já consegue:
+Funcionalidades disponíveis:
 
-- identificar novos usuários;
-- identificar alunos existentes;
-- autenticar alunos;
-- cadastrar novos alunos;
-- gerar Token e Código de Segurança;
-- salvar os dados na planilha;
-- manter o contexto da conversa utilizando memória.
+- cadastro de novos alunos;
+- autenticação utilizando Token e Código de Segurança;
+- geração automática de Token;
+- geração automática de Código de Segurança;
+- armazenamento das informações no Google Sheets;
+- memória temporária utilizando SessionId;
+- arquitetura modular baseada em workflows independentes;
+- separação das responsabilidades entre Arthur Core e Professor Arthur.
 
-### Planejamento definido:
+---
+
+## Conclusão
+
+A partir deste momento, a infraestrutura principal do sistema encontra-se funcional e organizada, permitindo que as próximas etapas sejam focadas na inteligência pedagógica, personalização das aulas e evolução da experiência do aluno.
+
+Hoje o Arthur deixou de ser apenas um agente conversacional e passou a possuir uma arquitetura modular, preparada para crescer, integrar novas plataformas e evoluir de forma organizada ao longo do desenvolvimento.
+
+---
+
+## Próximos objetivos
+
+A próxima etapa do projeto terá foco na experiência de aprendizagem.
+
+Os principais objetivos serão:
 
 - integrar completamente o Professor Arthur;
-- fazer o Professor Arthur iniciar a aula utilizando os dados do cadastro;
-- utilizar o EstadoAtual para controlar a continuidade das aulas;
-- eliminar perguntas repetidas para alunos já cadastrados;
+- iniciar automaticamente a aula após autenticação;
+- utilizar os dados do cadastro para personalizar o ensino;
+- implementar a continuidade das aulas utilizando o campo EstadoAtual;
+- evitar perguntas repetidas para alunos já cadastrados;
 - iniciar a implementação da memória permanente do aluno.
+
+---
+
