@@ -838,7 +838,7 @@ Esse será o próximo passo do desenvolvimento.
 
 29/07/2026
 
-**Tempo investido: 2h30**
+**Tempo investido: 3h30**
 
 ---
 
@@ -956,3 +956,157 @@ Agora ele é capaz de:
 - armazenar permanentemente todas as informações em sua base de dados.
 
 Essa foi a primeira funcionalidade completa do projeto, envolvendo conversa, inteligência artificial, regras de negócio e persistência de dados.
+
+---
+
+# Dia 6
+
+**Data:** 
+
+30/07/2026
+
+**Tempo investido: 6h45**
+
+---
+
+## O que foi desenvolvido
+
+### Mudanças
+
+Durante o desenvolvimento foi decidido abandonar definitivamente a utilização do sessionId como identificador do aluno, ocorreu muitos erros porque não tinha como usar ele como identificador único. 
+
+Novo padrão adotado:
+
+Identificação permanente:
+
+Token
+Código de Segurança
+
+O sessionId deixa de representar o aluno e poderá ser utilizado futuramente apenas para identificar sessões temporárias de conversa.
+
+---
+
+### Conclusão do Workflow de Autenticação**
+
+Finalizado o WF - Autenticacao.
+
+Implementações:
+
+Busca do aluno pelo Token.
+Validação do Código de Segurança.
+Retorno padronizado.
+Tratamento para Token inexistente.
+Tratamento para Código incorreto.
+
+Durante os testes foi necessário:
+
+ativar Convert types where required nos nós IF;
+ajustar diferenças entre String e Number;
+validar todos os cenários.
+Testes realizados
+
+✔ Token válido + Código válido
+
+✔ Token inexistente
+
+✔ Código incorreto
+
+Todos funcionando corretamente.
+
+---
+
+### Alterações na estrutura da planilha
+
+Foi realizada uma reorganização completa da aba Alunos.
+
+Campos atuais:
+```
+IdAluno
+Token
+CodigoSeguranca
+Nome
+Nivel
+Objetivo
+Area
+Metodo
+EstadoAtual
+Status
+DataCadastro
+UltimoAcesso
+UltimaAula
+TotalAulas
+Idioma
+VersaoPerfil
+Observacoes
+```
+Também foi padronizada a nomenclatura das colunas removendo acentos para facilitar integrações futuras.
+
+---
+
+### Nova Arquitetura Definida
+
+O projeto passa a possuir dois agentes principais.
+
+**Arthur Core**
+
+Responsável por:
+
+controlar todo o fluxo do sistema;
+identificar se o aluno possui cadastro;
+realizar autenticação;
+conduzir o processo de cadastro;
+gerar Token e Código;
+chamar os workflows necessários;
+encaminhar o aluno autenticado ao Professor Arthur.
+
+O Arthur Core NÃO ensinará inglês.
+
+---
+
+**Professor Arthur**
+
+Responsável exclusivamente por:
+
+ensinar inglês;
+corrigir exercícios;
+realizar conversação;
+adaptar as aulas conforme o perfil do aluno.
+
+O Professor Arthur deixa de possuir responsabilidades relacionadas a:
+
+cadastro;
+autenticação;
+banco de dados;
+segurança.
+
+---
+
+### Reaproveitamento dos Workflows
+
+Foi decidido manter e reutilizar os workflows já desenvolvidos.
+
+Os workflows existentes passam a ser utilizados pelo Arthur Core.
+
+Reutilizados:
+
+WF - Extrair Perfil
+WF - Cadastro de Aluno
+WF - Autenticacao
+
+Nenhum deles será recriado.
+
+Apenas mudarão de responsável (quem faz a chamada).
+
+---
+
+### Próximos objetivos
+
+Sprint seguinte:
+
+concluir o Arthur Core;
+mover completamente o fluxo de cadastro para o Arthur Core;
+integrar o Professor Arthur apenas após autenticação ou cadastro;
+posteriormente realizar integração com Telegram.
+
+---
+
