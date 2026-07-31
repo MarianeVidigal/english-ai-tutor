@@ -1122,4 +1122,248 @@ posteriormente realizar integração com Telegram.
 
 ## Objetivo do dia
 
-Concluir a arquitetura da Sprint 1 do Arthur, validar o fluxo completo de autenticação, cadastro e preparar a base para a Sprint 2.
+Concluir a arquitetura do Arthur, validar o fluxo completo de autenticação, cadastro e preparar o Arthur para iniciar as aulas.
+
+---
+
+## Arquitetura
+
+### Arthur Core
+
+Foi decidido que o Arthur Core será responsável exclusivamente pelo controle da navegação do sistema.
+
+Responsabilidades:
+
+- identificar se o usuário possui cadastro;
+- conduzir o fluxo de autenticação;
+- conduzir o fluxo de cadastro;
+- decidir qual ferramenta utilizar;
+- nunca ensinar inglês.
+
+O ensino ficará totalmente sob responsabilidade do Professor Arthur.
+
+---
+
+### Separação dos agentes
+
+Foi consolidada a arquitetura em dois agentes:
+
+**Arthur Core**
+
+- controla o sistema;
+- autentica usuários;
+- cadastra alunos;
+- inicia as aulas.
+
+**Professor Arthur**
+
+- ensina inglês;
+- personaliza as aulas;
+- acompanha a evolução do aluno.
+
+Essa separação facilita a manutenção e futuras expansões.
+
+---
+
+## Memória
+
+Foi adicionada uma Simple Memory ao AI Agent do Arthur Core.
+
+Configuração:
+```
+Session Key: {{ $json.sessionId }}
+Context Window Length: 10
+```
+**Objetivo:**
+
+- manter o contexto durante a conversa;
+- evitar que o Arthur reinicie o fluxo a cada mensagem.
+
+Foi decidido que essa memória será utilizada apenas para conversas temporárias.
+
+A lógica permanente continuará sendo implementada utilizando o campo EstadoAtual.
+
+---
+
+## Prompt do Arthur Core
+
+O prompt foi completamente reestruturado.
+
+Foram adicionadas regras para:
+
+- interpretar respostas naturais;
+- aceitar diversas formas de responder "sim" e "não";
+- realizar apenas uma pergunta por vez;
+- nunca solicitar Token e Código juntos;
+- nunca utilizar ferramentas com informações incompletas;
+- utilizar WF - Autenticacao somente quando possuir Token e Código.
+
+Também foram adicionadas restrições para impedir que o Arthur invente informações.
+
+---
+
+## Fluxo de autenticação
+
+Foi validado o fluxo:
+```
+Usuário
+↓
+Arthur Core
+↓
+Pergunta se possui cadastro
+↓
+Solicita Token
+↓
+Solicita Código
+↓
+WF - Autenticacao
+↓
+Autenticado
+```
+Todos os testes passaram.
+
+---
+
+## Fluxo de cadastro
+
+Foi validado o fluxo completo para novos alunos.
+
+O Arthur conseguiu:
+
+- solicitar nome;
+- solicitar nível;
+- solicitar objetivo;
+- solicitar área;
+- solicitar método de estudo.
+
+Após receber todas as informações:
+
+- executou o WF - Extrair Perfil;
+- executou o WF - Cadastro de Aluno;
+- salvou corretamente na planilha;
+- recebeu o Token e Código de Segurança gerados;
+- informou corretamente esses dados ao usuário.
+
+---
+
+## Correções realizadas
+
+Durante os testes foram encontrados e corrigidos diversos problemas.
+
+### Correção 1
+
+O Arthur reiniciava a conversa após receber o Token.
+
+**Causa:**
+
+Ausência de memória.
+
+**Solução:**
+
+Implementação da Simple Memory.
+
+### Correção 2
+
+O Arthur tentava autenticar antes de possuir Token e Código.
+
+**Solução:**
+
+Alteração do prompt obrigando a autenticação somente após possuir ambos os dados.
+
+### Correção 3
+
+O Arthur inventava Token e Código.
+
+**Solução:**
+
+O workflow passou a retornar os valores reais para o AI Agent.
+
+## Correção 4
+
+O Arthur não reconhecia algumas respostas naturais.
+
+Exemplo:
+
+"Já sou aluno"
+
+**Solução:**
+
+Foram adicionadas diversas formas de respostas equivalentes ao prompt.
+
+---
+
+## Testes realizados
+
+### Teste 1
+
+Aluno já cadastrado: TOKEN CORRETO e CODIGO CORRETO
+
+Resultado:
+
+Aprovado.
+
+### Teste 2
+
+Token inválido.
+
+Resultado:
+
+Aprovado.
+
+### Teste 3
+
+Respostas naturais.
+
+Exemplos:
+
+- Já utilizo
+- Sou aluno
+- Tenho cadastro
+
+Resultado:
+
+Aprovado.
+
+### Teste 4
+
+Cadastro de novo aluno.
+
+Resultado:
+
+Aprovado após correções no retorno do workflow.
+
+---
+
+## Decisão
+
+Foi decidido que:
+
+o Token será o identificador permanente do aluno;
+o Código de Segurança será utilizado para autenticação;
+o SessionId continuará sendo utilizado apenas para memória temporária da conversa;
+o EstadoAtual será responsável futuramente pela continuidade das aulas entre diferentes plataformas.
+
+---
+
+Situação atual do projeto
+
+Sprint 1 praticamente concluída.
+
+O Arthur já consegue:
+
+identificar novos usuários;
+identificar alunos existentes;
+autenticar alunos;
+cadastrar novos alunos;
+gerar Token e Código de Segurança;
+salvar os dados na planilha;
+manter o contexto da conversa utilizando memória.
+Próximos passos (Sprint 2)
+
+Planejamento definido:
+
+integrar completamente o Professor Arthur;
+fazer o Professor Arthur iniciar a aula utilizando os dados do cadastro;
+utilizar o EstadoAtual para controlar a continuidade das aulas;
+eliminar perguntas repetidas para alunos já cadastrados;
+iniciar a implementação da memória permanente do aluno.
