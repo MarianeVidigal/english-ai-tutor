@@ -1338,32 +1338,29 @@ Aprovado após correções no retorno do workflow.
 
 Foi decidido que:
 
-o Token será o identificador permanente do aluno;
-o Código de Segurança será utilizado para autenticação;
-o SessionId continuará sendo utilizado apenas para memória temporária da conversa;
-o EstadoAtual será responsável futuramente pela continuidade das aulas entre diferentes plataformas.
+- Token será o identificador permanente do aluno;
+- Código de Segurança será utilizado para autenticação;
+- SessionId continuará sendo utilizado apenas para memória temporária da conversa;
+- EstadoAtual será responsável futuramente pela continuidade das aulas entre diferentes plataformas.
 
 ---
 
-Situação atual do projeto
-
-Sprint 1 praticamente concluída.
+## Situação atual do projeto
 
 O Arthur já consegue:
 
-identificar novos usuários;
-identificar alunos existentes;
-autenticar alunos;
-cadastrar novos alunos;
-gerar Token e Código de Segurança;
-salvar os dados na planilha;
-manter o contexto da conversa utilizando memória.
-Próximos passos (Sprint 2)
+- identificar novos usuários;
+- identificar alunos existentes;
+- autenticar alunos;
+- cadastrar novos alunos;
+- gerar Token e Código de Segurança;
+- salvar os dados na planilha;
+- manter o contexto da conversa utilizando memória.
 
-Planejamento definido:
+### Planejamento definido:
 
-integrar completamente o Professor Arthur;
-fazer o Professor Arthur iniciar a aula utilizando os dados do cadastro;
-utilizar o EstadoAtual para controlar a continuidade das aulas;
-eliminar perguntas repetidas para alunos já cadastrados;
-iniciar a implementação da memória permanente do aluno.
+- integrar completamente o Professor Arthur;
+- fazer o Professor Arthur iniciar a aula utilizando os dados do cadastro;
+- utilizar o EstadoAtual para controlar a continuidade das aulas;
+- eliminar perguntas repetidas para alunos já cadastrados;
+- iniciar a implementação da memória permanente do aluno.
