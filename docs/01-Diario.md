@@ -1454,7 +1454,7 @@ Agora ele:
 
 ---
 
-## Fluxo do Primeiro Acesso
+### Primeiro Acesso
 
 Foi implementado o comportamento específico para novos alunos.
 
@@ -1474,3 +1474,116 @@ novoAluno = false
 
 o Professor Arthur nunca menciona Token nem Código de Segurança.
 
+---
+
+### Workflow "WF - Iniciar Aula"
+
+Foi criado um novo workflow responsável por preparar os dados antes da primeira aula.
+
+Fluxo:
+´´´
+Recebe Token
+↓
+Busca Perfil
+↓
+Valida aluno
+↓
+Prepara dados
+↓
+Chama Professor Arthur
+´´´
+Este workflow centraliza toda a preparação das informações utilizadas pelo Professor Arthur.
+
+---
+
+### Workflow "WF - Salvar Progresso"
+
+Foi criado o primeiro sistema de persistência do aprendizado.
+
+Estrutura:
+´´´
+When Executed by Another Workflow
+↓
+Google Sheets
+(Update Row)
+↓
+Edit Fields
+´´´
+Campos atualizados:
+
+EstadoAtual
+UltimaAula
+TotalAulas
+UltimoAcesso
+
+Foi validado com sucesso utilizando dados simulados.
+
+Resultado:
+
+- atualização correta da planilha;
+
+retorno:
+´´´
+{
+  "sucesso": true
+}
+´´´
+---
+
+### Integração do Professor Arthur
+
+Foi criada a Tool:
+´´´
+Call WF - Salvar Progresso
+´´´
+O Professor Arthur agora está preparado para registrar automaticamente a evolução do aluno ao concluir conteúdos importantes.
+
+Também foi adicionada uma nova seção ao prompt definindo exatamente quando essa ferramenta deve ser utilizada.
+
+---
+
+## Correções Realizadas
+
+Durante esta etapa foram corrigidos diversos problemas:
+
+- repetição de perguntas do cadastro;
+- múltiplas perguntas em uma única resposta;
+- perda de contexto entre Arthur Core e Professor Arthur;
+- erro de Session ID da memória;
+- passagem incorreta dos dados do aluno;
+- estrutura dos objetos retornados pelos workflows;
+- repetição do Token e Código de Segurança;
+- integração entre cadastro e início da primeira aula.
+
+---
+
+## Limitações Encontradas
+
+Durante os testes foi atingido o limite de uso da API da Groq.
+
+Foram identificados dois tipos de limite:
+
+- TPD (Tokens Per Day)
+- TPM (Tokens Per Minute)
+
+Durante o desenvolvimento será necessário controlar o ritmo dos testes ou futuramente utilizar uma estratégia de modelos diferentes para desenvolvimento e produção.
+
+---
+
+## Situação Atual do Projeto
+
+- Arquitetura modular
+- Arthur Core
+- Professor Arthur
+- Cadastro
+- Autenticação
+- Busca de Perfil
+- Início da Aula
+- Persistência do progresso
+- Integração entre workflows
+
+## Próximos objetivos
+
+Concluir a integração definitiva entre o Professor Arthur e o workflow WF - Salvar Progresso, validando que o progresso seja salvo automaticamente ao final de cada bloco de aprendizagem, garantindo que o aluno possa continuar exatamente do ponto onde parou na próxima sessão.
+
+---
