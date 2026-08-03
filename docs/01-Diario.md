@@ -1583,7 +1583,7 @@ Durante o desenvolvimento será necessário controlar o ritmo dos testes ou futu
 
 Concluir a integração definitiva entre o Professor Arthur e o workflow WF - Salvar Progresso, validando que o progresso seja salvo automaticamente ao final de cada bloco de aprendizagem, garantindo que o aluno possa continuar exatamente do ponto onde parou na próxima sessão.
 
-Ideia de um super amigo: E:black_heart:
+Ideia de um super amigo: E :black_heart:
 ```
 Iniciar a implementação completa em Python para realizar o cadastro e a autenticação.
 ```
