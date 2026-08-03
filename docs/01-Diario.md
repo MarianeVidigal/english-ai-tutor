@@ -1390,7 +1390,7 @@ Os principais objetivos serão:
 
 ## Objetivo
 
-Finalizar a arquitetura principal do Arthur, integrar o fluxo entre o Arthur Core e o Professor Arthur e implementar o primeiro sistema de persistência de progresso do aluno.
+Concluir a integração entre o Arthur Core e o Professor Arthur, finalizar o fluxo de início das aulas, implementar o salvamento do progresso do aluno e corrigir diversos problemas estruturais da arquitetura.
 
 ---
 
@@ -1398,12 +1398,12 @@ Finalizar a arquitetura principal do Arthur, integrar o fluxo entre o Arthur Cor
 
 ### Arquitetura
 
-A arquitetura do projeto foi reorganizada para separar claramente as responsabilidades de cada componente.
+A arquitetura do projeto foi reorganizada para separar as responsabilidades de cada componente.
 
 Estrutura atual:
-´´´
+```
 Arthur Core
-│
+|
 ├── WF - Autenticacao
 ├── WF - Buscar Perfil
 ├── WF - Extrair Perfil
@@ -1413,7 +1413,7 @@ Arthur Core
     Professor Arthur
             │
             └── WF - Salvar Progresso
-´´´
+```
 Agora cada workflow possui uma única responsabilidade, facilitando manutenção, testes e futuras expansões.
 
 ---
@@ -1422,15 +1422,12 @@ Agora cada workflow possui uma única responsabilidade, facilitando manutenção
 
 O prompt do Arthur Core foi completamente reestruturado.
 
-Principais melhorias:
-
-- Separação clara entre usuários cadastrados e novos alunos.
+- Separação entre usuários cadastrados e novos alunos.
 - Controle completo do fluxo de autenticação.
 - Controle completo do fluxo de cadastro.
 - Obrigatoriedade de fazer apenas uma pergunta por vez.
 - Uso correto da memória da conversa.
 - Encaminhamento transparente para o Professor Arthur.
-- Eliminação de respostas administrativas desnecessárias.
 - Correção do problema em que o Core fazia múltiplas perguntas simultaneamente.
 
 O Core passou a atuar exclusivamente como controlador de fluxo.
