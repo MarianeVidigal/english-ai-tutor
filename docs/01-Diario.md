@@ -1585,6 +1585,6 @@ Concluir a integração definitiva entre o Professor Arthur e o workflow WF - Sa
 
 Ideia de um super amigo: E :black_heart:
 ```
-Iniciar a implementação completa em Python para realizar o cadastro e a autenticação.
+Iniciar a implementação em Python para realizar o cadastro e a autenticação dos alunos.
 ```
 ---
