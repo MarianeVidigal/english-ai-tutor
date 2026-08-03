@@ -1116,7 +1116,7 @@ posteriormente realizar integração com Telegram.
 
 31/07/2026
 
-**Tempo investido:**
+**Tempo investido: 3h50**
 
 ---
 
@@ -1377,4 +1377,100 @@ Os principais objetivos serão:
 - iniciar a implementação da memória permanente do aluno.
 
 ---
+
+# Dia 8
+
+**Data:** 
+
+03/08/2026
+
+**Tempo investido: 2h00**
+
+---
+
+## Objetivo
+
+Finalizar a arquitetura principal do Arthur, integrar o fluxo entre o Arthur Core e o Professor Arthur e implementar o primeiro sistema de persistência de progresso do aluno.
+
+---
+
+## O que foi desenvolvido
+
+### Arquitetura
+
+A arquitetura do projeto foi reorganizada para separar claramente as responsabilidades de cada componente.
+
+Estrutura atual:
+´´´
+Arthur Core
+│
+├── WF - Autenticacao
+├── WF - Buscar Perfil
+├── WF - Extrair Perfil
+└── WF - Iniciar Aula
+            │
+            ▼
+    Professor Arthur
+            │
+            └── WF - Salvar Progresso
+´´´
+Agora cada workflow possui uma única responsabilidade, facilitando manutenção, testes e futuras expansões.
+
+---
+
+### Arthur Core
+
+O prompt do Arthur Core foi completamente reestruturado.
+
+Principais melhorias:
+
+- Separação clara entre usuários cadastrados e novos alunos.
+- Controle completo do fluxo de autenticação.
+- Controle completo do fluxo de cadastro.
+- Obrigatoriedade de fazer apenas uma pergunta por vez.
+- Uso correto da memória da conversa.
+- Encaminhamento transparente para o Professor Arthur.
+- Eliminação de respostas administrativas desnecessárias.
+- Correção do problema em que o Core fazia múltiplas perguntas simultaneamente.
+
+O Core passou a atuar exclusivamente como controlador de fluxo.
+
+---
+
+### Professor Arthur
+
+O prompt do Professor Arthur foi completamente reescrito.
+
+Agora ele:
+
+- recebe automaticamente todas as informações do aluno;
+- nunca pergunta novamente dados já conhecidos;
+- personaliza exemplos conforme área profissional;
+- adapta o conteúdo ao nível do aluno;
+- continua exatamente do ponto onde a última aula terminou;
+- mantém um estilo de aula conversacional;
+- corrige erros de forma didática;
+- trabalha em pequenos blocos de aprendizagem.
+
+---
+
+## Fluxo do Primeiro Acesso
+
+Foi implementado o comportamento específico para novos alunos.
+
+Quando:
+
+novoAluno = true
+
+o Professor Arthur:
+
+- lembra o aluno para guardar Token e Código de Segurança;
+- apresenta essas informações apenas como um lembrete;
+- inicia imediatamente a primeira aula.
+
+Quando:
+
+novoAluno = false
+
+o Professor Arthur nunca menciona Token nem Código de Segurança.
 
