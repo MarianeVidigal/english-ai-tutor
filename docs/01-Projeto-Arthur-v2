@@ -5,26 +5,21 @@
 Substituir o Arthur Core desenvolvido em n8n por uma implementação em Python, mantendo o Professor Arthur como agente responsável pelo ensino.
 
 ## Arquitetura
-```
+´´´
 Usuário
 
 ↓
-
 Python
 
 ↓
-
 Cadastro
 
 ↓
-
 Banco de Dados
 
 ↓
-
 Autenticação
 
 ↓
-
 Professor Arthur
-```
+´´´
