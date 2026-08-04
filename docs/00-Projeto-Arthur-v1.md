@@ -93,15 +93,21 @@ Após a implementação da primeira arquitetura, o Arthur atingiu todos os objet
 - Workflows modulares no n8n
 
 ## Arquitetura da V1
-´´´
+```
 Usuário
+
 ↓
+
 Arthur Core (AI Agent)
+
 ↓
+
 Workflows
+
 ↓
+
 Professor Arthur (AI Agent)
-´´´
+```
 ## Resultado
 
 A Versão 1 foi considerada concluída e permanecerá arquivada como referência histórica do projeto.
