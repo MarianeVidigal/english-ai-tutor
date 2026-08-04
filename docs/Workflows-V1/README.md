@@ -9,7 +9,7 @@ Cada workflow possui uma responsabilidade específica dentro da arquitetura.
 Esta documentação foi mantida para preservar a evolução do projeto mesmo após o início da Versão 2 em Python.
 
 ## Arquitetura
-´´´
+```
 Arthur Core
 
 ↓
@@ -23,4 +23,4 @@ Professor Arthur
 ↓
 
 Salvar Progresso
-´´´
+```
