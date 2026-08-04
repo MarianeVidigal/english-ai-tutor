@@ -1,12 +1,12 @@
 # Projeto - Arthur V2 (Python)
 
-> "A primeira versão provou que a arquitetura funcionava.
->
-> A segunda versão tem como objetivo construir uma implementação mais robusta, desacoplada e escalável utilizando Python."
+A primeira versão provou que a arquitetura funcionava.
+
+A segunda versão tem como objetivo construir uma implementação mais robusta, desacoplada e escalável utilizando Python.
 
 ---
 
-# Objetivo
+## Objetivo
 
 A Versão 2 do Arthur tem como principal objetivo substituir o Arthur Core desenvolvido em n8n por uma implementação própria em Python.
 
@@ -24,7 +24,7 @@ A principal mudança será a forma como o sistema realiza:
 
 ---
 
-# Motivação
+## Motivação
 
 Durante o desenvolvimento da Versão 1 foi possível validar toda a lógica de funcionamento do sistema utilizando exclusivamente o n8n.
 
@@ -34,9 +34,9 @@ Essa mudança permitirá maior controle sobre o sistema, melhor organização do
 
 ---
 
-# Objetivos da Versão 2
+## Objetivos da Versão 2
 
-## Cadastro
+### Cadastro
 
 O cadastro será desenvolvido em Python.
 
@@ -49,7 +49,7 @@ Será responsável por:
 
 ---
 
-## Autenticação
+### Autenticação
 
 A autenticação será realizada em Python.
 
@@ -64,7 +64,7 @@ Retornará:
 
 ---
 
-## Banco de Dados
+### Banco de Dados
 
 Substituir a persistência baseada em Google Sheets por um banco de dados.
 
@@ -82,7 +82,7 @@ sem alterar a arquitetura principal.
 
 ---
 
-## Professor Arthur
+### Professor Arthur
 
 O Professor Arthur continuará existindo.
 
@@ -99,33 +99,23 @@ O Professor Arthur deixará de depender do Arthur Core em n8n e passará a receb
 
 ---
 
-# Nova Arquitetura
-
+## Nova Arquitetura
+```
 Usuário
-
 ↓
-
 Python
-
 ↓
-
 Cadastro
-
 ↓
-
 Banco de Dados
-
 ↓
-
 Autenticação
-
 ↓
-
 Professor Arthur
-
+```
 ---
 
-# Tecnologias previstas
+## Tecnologias previstas
 
 - Python
 - SQLite
@@ -137,7 +127,7 @@ Professor Arthur
 
 ---
 
-# Objetivos pessoais
+## Objetivos pessoais
 
 Além da evolução do Arthur, esta versão também representa uma nova etapa da minha formação profissional.
 
@@ -153,7 +143,7 @@ Durante esta implementação pretendo desenvolver conhecimentos em:
 
 ---
 
-# Meta da Versão 2
+## Meta da Versão 2
 
 Ao final desta versão, o Arthur deverá ser capaz de:
 
