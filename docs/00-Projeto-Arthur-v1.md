@@ -7,11 +7,13 @@
 
 ## Nome Interno
 
-A definir.
+**Arthur**
+
+O projeto passou a adotar oficialmente o nome Arthur após a conclusão da primeira versão funcional da arquitetura.
 
 ---
 
-# Manifesto
+## Manifesto
 
 Este projeto nasceu da vontade de aprender inglês, evoluir profissionalmente e explorar o potencial da Inteligência Artificial.
 
@@ -74,3 +76,32 @@ Projeto iniciado.
 Versão atual:
 
 0.0.1
+
+# Encerramento da Versão 1
+
+Após a implementação da primeira arquitetura, o Arthur atingiu todos os objetivos definidos para a Versão 1.
+
+## Funcionalidades implementadas
+
+- Cadastro inteligente de alunos
+- Autenticação por Token e Código de Segurança
+- Professor Arthur
+- Memória do aluno
+- Continuação das aulas
+- Salvamento de progresso
+- Integração com Google Sheets
+- Workflows modulares no n8n
+
+## Arquitetura da V1
+
+Usuário
+↓
+Arthur Core (AI Agent)
+↓
+Workflows
+↓
+Professor Arthur (AI Agent)
+
+## Resultado
+
+A Versão 1 foi considerada concluída e permanecerá arquivada como referência histórica do projeto.
