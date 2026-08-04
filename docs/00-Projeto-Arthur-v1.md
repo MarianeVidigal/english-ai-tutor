@@ -110,4 +110,10 @@ Professor Arthur (AI Agent)
 ```
 ## Resultado
 
-A Versão 1 foi considerada concluída e permanecerá arquivada como referência histórica do projeto.
+Resultado
+
+A Versão 1 atingiu todos os objetivos definidos para sua arquitetura.
+
+Ela permanecerá preservada como referência histórica do projeto e continuará disponível para estudos, documentação e futuras comparações.
+
+O desenvolvimento seguirá agora para uma nova arquitetura utilizando Python, mantendo o Professor Arthur como responsável pelas aulas e substituindo o Arthur Core por uma implementação própria.
