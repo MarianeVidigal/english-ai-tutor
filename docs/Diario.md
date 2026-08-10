@@ -1715,3 +1715,31 @@ Você já possui cadastro?
 2 - Já sou aluno
 
 Escolha uma opção:
+
+---
+
+Os testes foram realizados utilizando as três possibilidades:
+
+- opção 1;
+- opção 2;
+- opção inválida.
+
+Todos os resultados foram executados conforme esperado.
+
+### Modularização
+
+Após validar o primeiro fluxo, o código foi separado em módulos.
+
+### A função de cadastro foi criada no arquivo:
+
+- cadastro.py
+
+### E a função de autenticação foi criada no arquivo:
+
+- autenticacao.py
+
+O arquivo arthur.py passou a utilizar:
+```
+from cadastro import iniciar_cadastro
+from autenticacao import iniciar_autenticacao
+```
