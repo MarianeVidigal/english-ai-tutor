@@ -1664,7 +1664,7 @@ Foi decidido que o desenvolvimento da V2 será realizado inicialmente no VSCode,
 Somente depois que a aplicação estiver funcionando de forma independente será estudada a integração com o n8n.
 
 Fluxo planejado:
-´´´
+```
 Usuário
 ↓
 Python
@@ -1674,7 +1674,7 @@ Cadastro / Autenticação
 Perfil do aluno
 ↓
 Professor Arthur
-´´´
+```
 A ideia é que o Python seja responsável pela parte inicial do sistema, enquanto o Professor Arthur será responsável pela interação e realização das aulas.
 
 ---
@@ -1691,8 +1691,6 @@ Responsabilidade inicial dos arquivos:
 ---
 
 ## Primeira etapa concluída
-
-Foi criado o primeiro fluxo funcional do Arthur utilizando Python.
 
 O sistema apresenta uma tela inicial e pergunta ao usuário se ele já possui cadastro.
 
