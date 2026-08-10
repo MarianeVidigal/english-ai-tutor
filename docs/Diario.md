@@ -1632,3 +1632,88 @@ O objetivo desta nova versão é aprofundar meus conhecimentos em Python, banco 
 Hoje foi criado o documento:
 
 Projeto-V2-Python.md
+
+---
+
+# Dia 10
+
+**Data:** 
+
+10/08/2026
+
+**Tempo investido: 2h00**
+
+---
+
+# Desenvolvimento da V2 — Início da implementação em Python
+
+## Objetivo da etapa
+
+Foi iniciada a construção da Versão 2 do Arthur utilizando Python.
+
+A proposta desta versão é reconstruir a lógica de cadastro e autenticação que anteriormente era realizada pelo Arthur Core no n8n.
+
+A V1 continuará preservada e funcional como referência. A V2 será desenvolvida separadamente, permitindo comparar as duas abordagens posteriormente.
+
+---
+
+## Estratégia definida
+
+Foi decidido que o desenvolvimento da V2 será realizado inicialmente no VSCode, utilizando Python.
+
+Somente depois que a aplicação estiver funcionando de forma independente será estudada a integração com o n8n.
+
+Fluxo planejado:
+´´´
+Usuário
+↓
+Python
+↓
+Cadastro / Autenticação
+↓
+Perfil do aluno
+↓
+Professor Arthur
+´´´
+A ideia é que o Python seja responsável pela parte inicial do sistema, enquanto o Professor Arthur será responsável pela interação e realização das aulas.
+
+---
+
+## Organização do projeto
+
+Responsabilidade inicial dos arquivos:
+
+- `arthur.py`: responsável pelo fluxo principal da aplicação.
+- `cadastro.py`: responsável pelo processo de cadastro.
+- `autenticacao.py`: responsável pelo processo de autenticação.
+- `dados/`: reservado para armazenamento dos dados do sistema.
+
+---
+
+## Primeira etapa concluída
+
+Foi criado o primeiro fluxo funcional do Arthur utilizando Python.
+
+O sistema apresenta uma tela inicial e pergunta ao usuário se ele já possui cadastro.
+
+Opções implementadas:
+
+1. Primeira vez
+2. Já sou aluno
+
+Também foi implementado o tratamento de uma opção inválida.
+
+Exemplo do fluxo:
+
+```text
+================================
+       ARTHUR - ENGLISH AI
+================================
+
+Bem-vindo ao Arthur!
+
+Você já possui cadastro?
+1 - Primeira vez
+2 - Já sou aluno
+
+Escolha uma opção:
