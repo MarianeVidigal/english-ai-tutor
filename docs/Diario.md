@@ -1743,3 +1743,240 @@ O arquivo arthur.py passou a utilizar:
 from cadastro import iniciar_cadastro
 from autenticacao import iniciar_autenticacao
 ```
+
+---
+
+# Dia 11
+
+**Data:** 
+
+15/08/2026
+
+**Tempo investido: 3h30**
+
+---
+
+## Autenticação e Persistência de Dados
+
+### Busca de alunos
+
+Foi criada a função `buscar_aluno()` no módulo `autenticacao.py`.
+
+A função percorre a lista de alunos utilizando `for` e procura um aluno pelo nome informado.
+
+Também foi utilizado `.lower()` para permitir que a comparação não dependa de letras maiúsculas ou minúsculas.
+
+Foram realizados testes com:
+
+- Aluno existente.
+- Aluno inexistente.
+
+Os dois funcionaram corretamente.
+
+---
+
+### Organização da autenticação
+
+A lógica de busca foi separada da lógica de autenticação.
+
+Foi criada a função `iniciar_autenticacao()`, responsável por solicitar os dados ao usuário e utilizar `buscar_aluno()` para localizar o perfil.
+
+Foi praticada a separação de responsabilidades entre funções.
+
+---
+
+### Menu contínuo
+
+O Arthur passou a utilizar `while True` para manter o sistema funcionando continuamente.
+
+Foi criado um menu com as opções:
+
+1. Primeira vez
+2. Já sou aluno
+3. Sair
+
+Também foi utilizado `break` para encerrar o programa quando o usuário escolhe a opção de saída.
+
+Testes realizados:
+
+- Cadastro.
+- Autenticação.
+- Retorno ao menu.
+- Saída do sistema.
+- Opção inválida.
+
+Todos os testes apresentaram o resultado esperado.
+
+---
+
+### Identificação dos alunos
+
+Foi criado um identificador para cada aluno utilizando uma variável de controle:
+
+```python
+proximo_id = 1
+
+Isso permite que cada novo aluno receba um identificador diferente durante a execução.
+
+---
+
+### Busca por ID
+
+Foi criada a função:
+```
+buscar_aluno_por_id()
+```
+A função percorre a lista de alunos e procura o perfil utilizando o identificador.
+
+Foram realizados testes com:
+
+- ID existente.
+- Segundo ID existente.
+- ID inexistente.
+
+Todos os testes funcionaram corretamente.
+
+---
+
+### Token de acesso
+
+Foi adicionado um token ao perfil do aluno.
+
+Inicialmente foi utilizado um token simples para compreender o conceito de credencial.
+
+O perfil passou a possuir:
+
+- Nome.
+- Nível.
+- Objetivo.
+- Área.
+- Método.
+- ID.
+- Token.
+
+Foi compreendida a diferença entre identificação e credencial.
+
+---
+
+### Autenticação por ID + Token
+
+Foi criada a função:
+
+```
+autenticar_aluno()
+```
+A função utiliza o ID para localizar o aluno e depois verifica se o token informado corresponde ao token armazenado.
+
+Foram realizados testes com:
+
+- ID e token corretos.
+- ID correto e token incorreto.
+- ID inexistente.
+
+Todos os testes funcionaram corretamente.
+
+---
+
+### Identificador padronizado
+
+O identificador numérico foi substituído por um identificador padronizado:
+
+- ARTH-0001
+- ARTH-0002
+- ARTH-0003
+
+Foi utilizado pela primeira vez o conceito de F-Strings:
+```
+f"ARTH-{proximo_id:04d}"
+```
+O formato :04d foi utilizado para preencher o número com zeros à esquerda.
+
+- 1   → 0001
+- 15  → 0015
+- 100 → 0100
+
+Os testes de identificação e autenticação continuaram funcionando corretamente.
+
+### Token aleatório
+
+O token previsível foi substituído por um token aleatório utilizando o módulo secrets.
+
+Foi utilizado:
+```
+secrets.token_hex(8)
+```
+O token passou a ser diferente para cada aluno.
+```
+ID: ARTH-0001
+Token: a91f3c82e7b4410d
+```
+Foi testada a autenticação utilizando o token correto e também um token incorreto, todos os testes funcionaram corretamente.
+
+---
+
+### Módulo de segurança
+
+Foi criado o arquivo:
+```
+seguranca.py
+```
+A geração do token foi retirada do arthur.py e transformada em uma função própria:
+```
+def gerar_token():
+    return secrets.token_hex(8)
+```
+E no Arthur:
+```
+from seguranca import gerar_token
+```
+e
+```
+aluno["token"] = gerar_token()
+```
+
+---
+
+### Persistência de dados com JSON
+
+Até então, os alunos eram armazenados somente em uma lista durante a execução:
+```
+alunos = []
+```
+Foi criado o arquivo:
+```
+dados.py
+```
+E criada a função:
+```
+def salvar_alunos(alunos):
+    with open("alunos.json", "w", encoding="utf-8") as arquivo:
+        json.dump(alunos, arquivo, indent=4, ensure_ascii=False)
+```
+
+---
+
+## Estado atual do projeto
+
+- Cadastro de alunos.
+- Lista de alunos.
+- Dicionários para representar os perfis.
+- Identificadores individuais.
+- IDs padronizados (ARTH-0001).
+- Busca por nome.
+- Busca por ID.
+- Geração de tokens aleatórios.
+- Autenticação por ID + token.
+- Menu contínuo com while.
+- Separação do sistema em módulos.
+- Geração de credenciais em módulo próprio.
+- Primeiro sistema de persistência utilizando JSON.
+
+---
+
+## Próximo objetivo
+
+O próximo passo será implementar a leitura desses dados utilizando:
+```
+json.load()
+```
+Assim, quando o Arthur for iniciado novamente, ele poderá recuperar os alunos cadastrados anteriormente.
